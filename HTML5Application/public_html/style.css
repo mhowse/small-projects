@@ -8,7 +8,7 @@ html
 body
 { font: normal 85% Arial, Helvetica, sans-serif;
   background: #676767 url(../images/background.jpg) repeat;
-  color: #000;
+  color: #E5E4E2;
 }
 
 p
@@ -21,7 +21,7 @@ img
 { border: 0;}
 
 h1, h2, h3, h4, h5, h6 
-{ font: normal 175% Times New Roman, Helvetica, sans-serif;
+{ font: normal 155% Times New Roman, Helvetica, sans-serif;
   color: #FFF;
   text-shadow: 1px 1px #1D1Dd1D;
   letter-spacing: -1px;
@@ -294,7 +294,7 @@ ul#menu li:hover a
   box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 5px;}
   
  .readmore a
-{ color: #1D1D1D;}
+{ color: #E5E4E2;}
  
  .button_small
 { font: normal 110% Arial, Helvetica, sans-serif;

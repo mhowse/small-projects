@@ -22,27 +22,27 @@ img
 
 h1, h2, h3, h4, h5, h6 
 { font: normal 155% Times New Roman, Helvetica, sans-serif;
-  color:#999999 ;
+  color: F0F8FF ;
   text-shadow: 1px 1px #888;
   letter-spacing: -1px;
   margin: 0 0 10px 0;}
 
 h2
-{ font: normal 165% Times New Roman, Helvetica, sans-serif;}
+{ font: normal 165% Arial, Helvetica, sans-serif;}
 
 h3
-{ font: normal 130% Times New Roman, Helvetica, sans-serif;
+{ font: normal 130% Arial, Helvetica, sans-serif;
 }
 
 h4, h5, h6
 { margin: 0;
   padding: 0 0 0px 0;
-  font: normal 150% Times New Roman, Helvetica, sans-serif;
+  font: normal 150% Arial, Helvetica, sans-serif;
   line-height: 1.5em;}
 
 h5, h6
-{ font: normal 95% Times New Roman, Helvetica, sans-serif;
-  color: #999999 ;
+{ font: normal 95% Arial, Helvetica, sans-serif;
+  color: F0F8FF ;
   padding-bottom: 15px;}
 
 a

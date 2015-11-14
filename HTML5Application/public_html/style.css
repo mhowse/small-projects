@@ -22,8 +22,8 @@ img
 
 h1, h2, h3, h4, h5, h6 
 { font: normal 155% Times New Roman, Helvetica, sans-serif;
-  color: #504A4B;
-  text-shadow: 1px 1px #504A4B;
+  color:#999999 ;
+  text-shadow: 1px 1px #888;
   letter-spacing: -1px;
   margin: 0 0 10px 0;}
 
@@ -42,7 +42,7 @@ h4, h5, h6
 
 h5, h6
 { font: normal 95% Times New Roman, Helvetica, sans-serif;
-  color: #888;
+  color: #999999 ;
   padding-bottom: 15px;}
 
 a

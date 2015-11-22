@@ -42,7 +42,7 @@ public class pig {
    Scanner scans = new Scanner(System.in); 
       System.out.println("Please enter the text you want translated.");
    //after this line the file ends.. something is going wrong with the while loop. 
-      while(scans.hasNext()){
+      while(scans.hasNext()){ 
      word = scans.nextLine();
        System.out.println("scanned");
      if (setting ==1){

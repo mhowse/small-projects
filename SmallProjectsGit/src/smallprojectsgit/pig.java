@@ -16,28 +16,56 @@ public class pig {
   
   public  static  void main (String [] args){
     setting =0;
-   Scanner scan = new Scanner (System.in);
-   //Stringbuilder strbld = new Stringbuilder();
-   System.out.println("Translate to pig? or from pig?");
-   System.out.println("Enter 1 to translate english to pig latin, enter 2 for the reverse"); 
-   setting =Integer.parseInt( scan.next()); 
+    settingChoice();
+    textHandling(); 
+    
+  } //end of main method
+ /**
+  * Sets the translation direction. 
+  * Does this by taking user input and placing it in the setting variable.
+  */ 
+  public static void settingChoice(){
+      try (Scanner scan = new Scanner (System.in)) {
+          System.out.println("Translate to pig? or from pig?");
+          System.out.println("Enter 1 to translate english to pig latin, enter 2 for the reverse");
+          setting =Integer.parseInt( scan.next());
+           System.out.println("Setting chosen");
+           scan.close();
+      }
+  }
   
-   while (scan.hasNext()){
-     word = scan.nextLine();
+  /**
+   * Takes the text and sends it to the correct translater method. 
+   * Currently this is where the bugs start. 
+   */
+ public static void textHandling(){
+   Scanner scans = new Scanner(System.in); 
+      System.out.println("Please enter the text you want translated.");
+   //after this line the file ends.. something is going wrong with the while loop. 
+      while(scans.hasNext()){
+     word = scans.nextLine();
+       System.out.println("scanned");
      if (setting ==1){
-       translateToPig(word);
        System.out.println("derp");
+       translateToPig(word);
+       System.out.println("derpcha test \n \n \n");
    } else 
      translateFromPig(word);
-   }
+      }
+   }  //end of text handling method. 
    
- }//end of main method 
   
   
      public  static void translateToPig(String sentance){
        sentance.replaceAll("[^\\p{Alnum}]+", "");  // This removes every non-alpha-numeric character.
+         if(sentance.equals("1")){
+             System.out.println("Initialising");
+             return;
+         } else {
+         }
          String[] wordArray = sentance.split("\\s+");
-         int size =wordArray.length; 
+         int size =wordArray.length;
+         
          StringBuilder strbld = new StringBuilder();
          StringBuilder str = new StringBuilder();
          for(int i =0;  i <size; i ++){

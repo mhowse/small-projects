@@ -35,7 +35,7 @@ public class pig {
   }
   
   /**
-   * Takes the text and sends it to the correct translater method. 
+   * Takes the text and sends it to the correct translator method. 
    * Currently this is where the bugs start. 
    */
  public static void textHandling(){
@@ -43,6 +43,7 @@ public class pig {
       System.out.println("Please enter the text you want translated.");
    //after this line the file ends.. something is going wrong with the while loop. 
       while(scans.hasNext()){ 
+       System.out.println("while loop entered");
      word = scans.nextLine();
        System.out.println("scanned");
      if (setting ==1){

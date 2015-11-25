@@ -1,7 +1,7 @@
     package smallprojectsgit;
 
     /** pig.java
-     * A pig latin translater.
+     * A pig latin translator.
      * November 2015 
      * Mhowse
     */
@@ -17,10 +17,6 @@
 
       public  static  void main (String [] args){
           int i =0;
-         // while( i < 10){
-          //System.out.println("incrementing i");
-          //i++;
-      //}
         setting =0;
         Scanner scan = new Scanner(System.in);
         System.out.println("Translate to pig? or from pig?");
@@ -32,9 +28,12 @@
         }
 
       } //end of main method
+      
+      
      /**
-      * Sets the translation direction. 
+      * settingChoice method. Sets the translation direction. 
       * Does this by taking user input and placing it in the setting variable.
+      * @param i which is the input variable to change the setting for which direction the translation will go. 
       */ 
       public static void settingChoice(int i){
         setting =i;  
@@ -48,6 +47,7 @@
       /**
        * Takes the text and sends it to the correct translator method. 
        * Currently this is where the bugs start. 
+       * @param word 
        */
      public static void textHandling(String word){
         Scanner scans = new Scanner(word);
@@ -65,32 +65,11 @@
                 translateFromPig(input);
         }
      }
-/*
-         
-       Scanner scans = new Scanner(System.in); 
-          System.out.println("Please enter the text you want translated.");
-       //after this line the file ends.. something is going wrong with the while loop. 
-         try {
-             if(setting ==1){
-                System.out.println("to pig");
-                while(scans.hasNextLine()){ 
-                  System.out.println("while loop entered");
-                  word = scans.nextLine();
-                  System.out.println("scanned");
-             }
-             }
-             else
-          while(scans.hasNextLine()){  
-         translateFromPig(word);
-          }
-          } catch (Exception e){
-              System.out.println("Error  caught");
-          }
-          scans.close();
-     *//*  //end of text handling method. */
 
-
-
+     /**
+      * Does the work of translating the individual words to pig latin. 
+      * @param  sentance, which is the string to be processed/translated.
+     */
          public  static void translateToPig(String sentance){
            sentance.replaceAll("[^\\p{Alnum}]+", "");  // This removes every non-alpha-numeric character.
              if(sentance.equals("1")){

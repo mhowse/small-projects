@@ -72,12 +72,12 @@
      */
          public  static void translateToPig(String word){
            word.replaceAll("[^\\p{Alnum}]+", "");  // This removes every non-alpha-numeric character.
-             if(word.equals("1")){
-                 System.out.println("Initialising");
+             if(word.equals("1")|| word.equals("2")){
+                 System.out.println("Initialising"); // way of checking that the input isnt one of the translating settings.
                  return;
              } else {
                  char c = word.charAt(0); 
-                 String suffix = ""+c+"ay";
+                 String suffix = ""+c+"ay"; 
              StringBuilder strbld = new StringBuilder();
              strbld.append("");
              int size = word.length(); 
@@ -96,7 +96,28 @@
 
 
               public static void translateFromPig(String word){
-              }
+                  word.replaceAll("[^\\p{Alnum}]+", "");  // This removes every non-alpha-numeric character.
+             if(word.equals("1")|| word.equals("2")){
+                 System.out.println("Initialising");
+                 return;  //same as translating to pig
+             } else{
+             StringBuilder str = new StringBuilder();
+             str.append("");
+              
+             int size = word.length()-3; 
+             int firstChar = word.length()-2; 
+             str.append(firstChar); //put the start of the word back in first position
+             for(int i =0; i<size; i++){
+                 str.append( word.charAt(i)); 
+             }
+
+           String result = str.toString();
+          System.out.println(result ); 
+             } 
+          return;
+         
+         }//end of method
+              
 
 
     }// end of class

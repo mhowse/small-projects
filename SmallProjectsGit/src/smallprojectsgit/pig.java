@@ -76,31 +76,22 @@
                  System.out.println("Initialising");
                  return;
              } else {
-             }
-             String[] wordArray = sentance.split("\\s+");
-             int size =wordArray.length;
-
+                 char c = sentance.charAt(0); 
+                 String suffix = ""+c+"ay";
              StringBuilder strbld = new StringBuilder();
-             StringBuilder str = new StringBuilder();
-             for(int i =0;  i <size; i ++){
-               System.out.println("test");
-                str = new StringBuilder();
-                System.out.println(wordArray[i]);
-                System.out.println("other test");
-                String currentWord = wordArray[i];
-                System.out.println("currentWord is  " +currentWord);
-               //String suffixWord = currentWord.charAt(1)+"ay"; 
-               int wordlength =currentWord.length();
-
-               for(int ind =1; ind<wordlength; ind++){
-                str.append(wordArray[i].charAt(ind));
-             }
-              // strbld.append(" " +str+suffixWord);
+             strbld.append("");
+             int size = sentance.length(); 
+             for(int i =1; i<size; i++){
+                 strbld.append( sentance.charAt(i)); 
              }
 
-             String result = strbld.toString();
+             strbld.append(suffix); 
+          
+
+           String result = strbld.toString();
           System.out.println(result ); 
-
+          return;
+         }
          }
 
 

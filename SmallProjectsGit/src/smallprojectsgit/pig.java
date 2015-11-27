@@ -68,7 +68,7 @@
 
      /**
       * Does the work of translating the individual words to pig latin. 
-      * @param  sentance, which is the string to be processed/translated.
+      * @param  word, which is the string to be processed/translated.
      */
          public  static void translateToPig(String word){
            word.replaceAll("[^\\p{Alnum}]+", "");  // This removes every non-alpha-numeric character.
@@ -94,7 +94,11 @@
          }
          }//end of method 
 
-
+ /**
+      * Does the work of translating the individual words from  pig latin to plaintext 
+      * @param  word, which is the string to be processed/translated.
+     */
+        
               public static void translateFromPig(String word){
                   word.replaceAll("[^\\p{Alnum}]+", "");  // This removes every non-alpha-numeric character.
              if(word.equals("1")|| word.equals("2")){

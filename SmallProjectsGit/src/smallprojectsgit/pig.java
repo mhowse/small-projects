@@ -70,29 +70,29 @@
       * Does the work of translating the individual words to pig latin. 
       * @param  sentance, which is the string to be processed/translated.
      */
-         public  static void translateToPig(String sentance){
-           sentance.replaceAll("[^\\p{Alnum}]+", "");  // This removes every non-alpha-numeric character.
-             if(sentance.equals("1")){
+         public  static void translateToPig(String word){
+           word.replaceAll("[^\\p{Alnum}]+", "");  // This removes every non-alpha-numeric character.
+             if(word.equals("1")){
                  System.out.println("Initialising");
                  return;
              } else {
-                 char c = sentance.charAt(0); 
+                 char c = word.charAt(0); 
                  String suffix = ""+c+"ay";
              StringBuilder strbld = new StringBuilder();
              strbld.append("");
-             int size = sentance.length(); 
+             int size = word.length(); 
+             //processing it so the first character in the original word doesnt appear at the beggining 
+             //of the new word, working from index one, instead of zero.
              for(int i =1; i<size; i++){
-                 strbld.append( sentance.charAt(i)); 
+                 strbld.append( word.charAt(i)); 
              }
 
-             strbld.append(suffix); 
-          
-
+             strbld.append(suffix);  // add the "ay " to the end of the world
            String result = strbld.toString();
           System.out.println(result ); 
           return;
          }
-         }
+         }//end of method 
 
 
               public static void translateFromPig(String word){

@@ -105,8 +105,7 @@
              str.append("");
               
              int size = word.length()-3; 
-             int firstChar = word.length()-2; 
-             str.append(firstChar); //put the start of the word back in first position
+             str.append(word.charAt(size)); //put the start of the word back in first position
              for(int i =0; i<size; i++){
                  str.append( word.charAt(i)); 
              }

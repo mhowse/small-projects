@@ -19,9 +19,10 @@
           int i =0;
         setting =0;
         Scanner scan = new Scanner(System.in);
-        System.out.println("Translate to pig? or from pig?");
+        System.out.println("Translate to piglatin? or from piglatin to plaintext?");
         System.out.println("Enter 1 to translate english to pig latin, enter 2 for the reverse");
         System.out.println("You can change the direction of the translator at any point by inputting the relevant number.");
+        System.out.println("To translate backwards and forwards please enter text one word at a time.");
         while (scan.hasNextLine()){
             word = scan.nextLine();
             textHandling(word);

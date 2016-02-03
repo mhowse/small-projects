@@ -98,6 +98,8 @@
  /**
       * Does the work of translating the individual words from  pig latin to plaintext 
       * @param  word, which is the string to be processed/translated.
+      * Currently needs more work, can sometimes through a string index out of bounds exception. 
+      * 
      */
         
               public static void translateFromPig(String word){

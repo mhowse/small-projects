@@ -113,7 +113,8 @@
              } else{
              StringBuilder str = new StringBuilder();
              str.append(""); 
-             int size = word.length()-3; 
+             int size = word.length()-3;
+             try {
              str.append(word.charAt(size)); //put the start of the word back in first position
              for(int i =0; i<size; i++){
                  str.append( word.charAt(i)); 
@@ -121,9 +122,13 @@
 
            String result = str.toString();
           System.out.println(result ); 
-             } 
+             } catch (StringIndexOutOfBoundsException e){
+                     System.out.println("The word " + word + "does not appear to be in correct pig-latin form.");
+                     System.out.println("Hence it cannot be translated from pig latin");
+                     }
+             }//end of else loop
           return;
-         
+            
          }//end of method
               
 

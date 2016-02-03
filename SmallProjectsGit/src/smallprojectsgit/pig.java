@@ -99,6 +99,9 @@
       * Does the work of translating the individual words from  pig latin to plaintext 
       * @param  word, which is the string to be processed/translated.
       * Currently needs more work, can sometimes through a string index out of bounds exception. 
+      * The problem occurs when one runs words that do not have the -ay suffix, 
+      * and are thus too short. 
+      * need to add in a handling of the exception.
       * 
      */
         
@@ -109,8 +112,7 @@
                  return;  //same as translating to pig
              } else{
              StringBuilder str = new StringBuilder();
-             str.append("");
-              
+             str.append(""); 
              int size = word.length()-3; 
              str.append(word.charAt(size)); //put the start of the word back in first position
              for(int i =0; i<size; i++){

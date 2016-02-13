@@ -25,41 +25,7 @@ public class simpleTranslator {
   private String currentCell = ""; 
   private int rowCount;
   private int colCount;
-  
-   public void readODS(File file)
-      {
-        Sheet sheet;
-        try {
-             //Getting the 0th sheet for manipulation| pass sheet name as string
-             sheet = SpreadSheet.createFromFile(file).getSheet(0);
-              
-             //Get row count and column count
-             int nColCount = sheet.getColumnCount();
-             int nRowCount = sheet.getRowCount();
-             rowCount =nRowCount; 
-             colCount=nColCount;
 
-             System.out.println("Rows :"+nRowCount);
-             System.out.println("Cols :"+nColCount);
-             //Iterating through each row of the selected sheet
-             MutableCell cell = null;
-             for(int nRowIndex = 0; nRowIndex < nRowCount; nRowIndex++)
-             {
-               //Iterating through each column
-               int nColIndex = 0;
-               for( ;nColIndex < nColCount; nColIndex++)
-               {
-                 cell = sheet.getCellAt(nColIndex, nRowIndex);
-                 System.out.print(cell.getValue()+ " ");
-                }
-                System.out.println();
-              }
-
-            } catch (IOException e) {
-              e.printStackTrace();
-            }
-      }
-      
   
   /**main method
     * 
@@ -88,6 +54,15 @@ public class simpleTranslator {
  //make a sheet to work with
 
  final Sheet sheet = SpreadSheet.createFromFile(file).getSheet(0);
+  int nColCount = sheet.getColumnCount();
+             int nRowCount = sheet.getRowCount();
+             rowCount =nRowCount; 
+             colCount=nColCount;
+
+             System.out.println("Rows :"+nRowCount);
+             System.out.println("Cols :"+nColCount);
+             // so one can iterate through each row of the selected sheet
+             //this is so one can search for the word. 
  } catch (Exception e){
    System.out.println("exception at sheet creation");
  }
@@ -99,9 +74,6 @@ public class simpleTranslator {
    System.out.println(colCount +"cols accross");
    System.out.println(rowCount+"rows down");
    /*
-   sheet.getCellAt("I10").setValue(new Date());
- // Change strings.
- sheet.setValueAt("Filling test", 1, 1);
  sheet.getCellAt("B27").setValue("On site support");
  // Change number.
  sheet.getCellAt("F24").setValue(3);

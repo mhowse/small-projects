@@ -33,6 +33,7 @@
      * @throws java.lang.Exception 
             */
           public static void main (String [] args) throws Exception{
+              System.out.println("running");
             chooseTranslation(); //set direction
             //quick fix in case user derps, only one direction atm. 
             direction = "German"; 
@@ -55,6 +56,10 @@
          //make a sheet to work with
 
          final Sheet sheet = SpreadSheet.createFromFile(file).getSheet(0);
+         /*This is what currently needs worked on. 
+         the sheet fails creation currently, fix this first.
+         */
+         System.out.println("Sheet created");
           colCount = sheet.getColumnCount();
           rowCount = sheet.getRowCount();
           System.out.println("Rows :"+rowCount);

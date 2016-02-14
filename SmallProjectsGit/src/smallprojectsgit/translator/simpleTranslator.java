@@ -7,11 +7,7 @@
 package smallprojectsgit.translator; 
 
 import java.util.*;
-import java.io.*; 
-import java.nio.*;
-import java.net.*;
-import java.lang.Class.*;
-//import org.jopendocument.dom.spreadsheet.MutableCell;
+import java.io.*;
 import org.jopendocument.dom.spreadsheet.Sheet;
 import org.jopendocument.dom.spreadsheet.SpreadSheet;
 /** The translations will be done word for word, from  a stored dictionary  spreadsheet. 
@@ -28,7 +24,7 @@ public class simpleTranslator {
   private String currentCell = ""; 
   private int rowCount;
   private int colCount;
-  private String path =""; // private File file;
+  private String path =""; 
   
   
   /**main method
@@ -56,10 +52,7 @@ public class simpleTranslator {
       // Load the specific dictionary file.
         try{
           getPathDictionary();
-         
           File file = new File(path); 
-           
-          //null pointer excpetion here, so either the
           System.out.println("loading file");
         final Sheet sheet = SpreadSheet.createFromFile(file).getSheet(0);
         System.out.println("Sheet created");
@@ -84,8 +77,21 @@ public class simpleTranslator {
     System.out.println(rowCount+"rows down");
     
   }
+  
   /**
-   * 
+   * Takes the word to be translated, searches the dictionary for it. 
+   * Finds the translation of said word (in next column over) and returns that translation.
+   * @return string that is the translation of the word 
+   */
+  private String translateWord(String a, Sheet b){
+      String c = a; 
+      //fill out this method later. 
+     return c; 
+  }
+  
+  
+  /**
+   * getPathDictionary handles the path creation for loading the correct dictionary. 
    */
   
   private void getPathDictionary(){
@@ -101,8 +107,7 @@ public class simpleTranslator {
      System.out.println(y);
      System.out.println("c set");
      y.replace("\\", "/");
-         path = new String(y);
-         System.out.println(path);
+     path = y;
         
   }
   

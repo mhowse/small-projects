@@ -25,6 +25,7 @@
           private String currentCell = ""; 
           private int rowCount;
           private int colCount;
+          private File file; 
 
 
           /**main method
@@ -51,11 +52,15 @@
             if (direction.equals("German")){
               // Load the specific dictionary file.
               try {
-         File file = new File("smallprojectsgit.translator.dictionary.ods");
+                  try{
+          file = new File("smallprojectsgit.translator.dictionary.ods");
             System.out.println("loading file");
          //issue is that the file can't be found. \
-            
-
+           } catch (Exception e){
+           System.out.println(e.getMessage());
+           System.out.println("first catch spot");
+         }
+              
          final Sheet sheet = SpreadSheet.createFromFile(file).getSheet(0);
          System.out.println("Sheet created");
           colCount = sheet.getColumnCount();
@@ -65,7 +70,6 @@
                      // so one can iterate through each row of the selected sheet
                      //this is so one can search for the word. 
          } catch (Exception e){
-           System.out.println("exception at sheet creation");
            System.out.println(e.getMessage());
          }
             }

@@ -51,14 +51,12 @@
             if (direction.equals("German")){
               // Load the specific dictionary file.
               try {
-         File file = new File("dictionary.ods");
+         File file = new File("smallprojectsgit.translator.dictionary.ods");
             System.out.println("loading file");
-         //make a sheet to work with
+         //issue is that the file can't be found. \
+            
 
          final Sheet sheet = SpreadSheet.createFromFile(file).getSheet(0);
-         /*This is what currently needs worked on. 
-         the sheet fails creation currently, fix this first.
-         */
          System.out.println("Sheet created");
           colCount = sheet.getColumnCount();
           rowCount = sheet.getRowCount();
@@ -68,6 +66,7 @@
                      //this is so one can search for the word. 
          } catch (Exception e){
            System.out.println("exception at sheet creation");
+           System.out.println(e.getMessage());
          }
             }
          //setup complete, start taking and translating words. 
@@ -76,17 +75,10 @@
            wordToTranslate = scan.nextLine(); 
            System.out.println(colCount +"cols accross");
            System.out.println(rowCount+"rows down");
-           /*
-         sheet.getCellAt("B27").setValue("On site support");
-         // Change number.
-         sheet.getCellAt("F24").setValue(3);
-         // Or better yet use a named range
-         // (relative to the first cell of the range, wherever it might be).
-         sheet.getSpreadSheet().getTableModel("Products").setValueAt(1, 5, 4);
-         */
 
             }
 
+         
 
           /** chooses which way the translation will 
             * run in, English to German v.s. German to English

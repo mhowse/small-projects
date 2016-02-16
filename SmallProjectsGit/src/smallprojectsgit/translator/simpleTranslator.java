@@ -51,8 +51,8 @@ public class simpleTranslator {
     if (direction.equals("German")){
       // Load the specific dictionary file.
         try{
-          getPathDictionary();
-          File file = new File(path); 
+         // getPathDictionary();
+          File file = new File(getPathDictionary()); 
           System.out.println("loading file");
         final Sheet sheet = SpreadSheet.createFromFile(file).getSheet(0);
         System.out.println("Sheet created");
@@ -101,9 +101,11 @@ public class simpleTranslator {
   
   /**
    * getPathDictionary handles the path creation for loading the correct dictionary. 
+   * @return string replace. 
+   * 
    */
   
-  private void getPathDictionary(){
+  private String getPathDictionary(){
     String s=""; //adds in the path suffix to load the correct dictionary. 
     if (direction.equals ("German")){
     s = "/resources/dictionary.ods";
@@ -116,8 +118,9 @@ public class simpleTranslator {
      System.out.println(y);
      System.out.println("c set");
       String replace = y.replace("\\", "/");
+      System.out.println("fixed path " +replace);
      path = replace;
-        
+        return replace;
   }
   
   /** chooses which way the translation will 

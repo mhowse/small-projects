@@ -82,11 +82,25 @@ public class simpleTranslator {
    * Takes the word to be translated, searches the dictionary for it. 
    * Finds the translation of said word (in next column over) and returns that translation.
    * @return string that is the translation of the word 
+   * 
+   * To do, change the dictionary file so that the words are sorted 
+   * alphabetically rather then by most common usage. 
+   * Then can use binary search or something similar, to make for a more 
+   * efficient and fast word finding. 
+   * Due to the large numbers of words, make a different column for each starting letter. 
+   * A column of words that start with a, one for words that start with b. ect. 
+   * The translateWord method can direct the search function to the correct column. 
+   * and then call the search function. 
+   * This is like a really basic hash table. 
    */
   private String translateWord(String a, Sheet b){
     System.out.println("translateWord has been called");
       String c="";
+      //find correct column based off first letter. 
+      int h =1; 
+      System.out.println(binarySearch(a, b,1 ));
       System.out.println("starting for loop");
+
      for (int i =0; i <rowCount; i++){
          c = b.getValueAt(1,i).toString();
          System.out.println("for loop "+ c);
@@ -96,6 +110,15 @@ public class simpleTranslator {
          }
      } 
      return c; 
+  }
+  
+  /**
+   * binary searches the correct column. 
+   * @returns the translation, or a non found message. 
+  */
+  private String binarySearch(String s,Sheet b,  int a){
+      String d ="This is where the search function will go"; 
+      return d;
   }
   
   

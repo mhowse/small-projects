@@ -72,7 +72,7 @@ public class simpleTranslator {
       } catch (Exception e){
         System.out.println("error");
         System.out.println(e.getMessage());
-        e.printStackTrace(); 
+       // e.printStackTrace(); for testing and finding problems
         System.out.println("error message end");
       }
     }//if loop 
@@ -115,8 +115,8 @@ public class simpleTranslator {
      y+=s;
      System.out.println(y);
      System.out.println("c set");
-     y.replace("\\", "/");
-     path = y;
+      String replace = y.replace("\\", "/");
+     path = replace;
         
   }
   

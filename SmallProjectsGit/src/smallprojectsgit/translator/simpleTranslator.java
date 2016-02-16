@@ -62,21 +62,21 @@ public class simpleTranslator {
         System.out.println("Cols :"+colCount);
         // so one can iterate through each row of the selected sheet
         //this is so one can search for the word. 
+        //setup complete, start taking and translating words. 
+    Scanner scan = new Scanner(System.in);
+    System.out.println("Type in the german word, and an english translation will appear"); 
+    wordToTranslate = scan.nextLine(); 
+    System.out.println(colCount +"cols accross");
+    System.out.println(rowCount+"rows down");
+    translateWord(wordToTranslate, sheet);
       } catch (Exception e){
         System.out.println("error");
         System.out.println(e.getMessage());
         e.printStackTrace(); 
         System.out.println("error message end");
       }
-    }
-    //setup complete, start taking and translating words. 
-    Scanner scan = new Scanner(System.in);
-    System.out.println("Type in the german word, and an english translation will appear"); 
-    wordToTranslate = scan.nextLine(); 
-    System.out.println(colCount +"cols accross");
-    System.out.println(rowCount+"rows down");
-    
-  }
+    }//if loop 
+  } //end method 
   
   /**
    * Takes the word to be translated, searches the dictionary for it. 
@@ -84,11 +84,15 @@ public class simpleTranslator {
    * @return string that is the translation of the word 
    */
   private String translateWord(String a, Sheet b){
+    System.out.println("translateWord has been called");
       String c="";
+      System.out.println("starting for loop");
      for (int i =0; i <rowCount; i++){
          c = b.getValueAt(1,i).toString();
+         System.out.println("for loop "+ c);
          if (c.equals(a) ){
              System.out.println(a+ "means "+ b.getValueAt(2,i) + "in german." );
+             break; //need to exit out of for loop here. 
          }
      } 
      return c; 

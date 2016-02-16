@@ -84,8 +84,13 @@ public class simpleTranslator {
    * @return string that is the translation of the word 
    */
   private String translateWord(String a, Sheet b){
-      String c = a; 
-      //fill out this method later. 
+      String c="";
+     for (int i =0; i <rowCount; i++){
+         c = b.getValueAt(1,i).toString();
+         if (c.equals(a) ){
+             System.out.println(a+ "means "+ b.getValueAt(2,i) + "in german." );
+         }
+     } 
      return c; 
   }
   

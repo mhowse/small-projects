@@ -95,12 +95,41 @@ public class simpleTranslator {
    */
   private String translateWord(String a, Sheet b){
     System.out.println("translateWord has been called");
-      String c="";
+      char c=a.charAt(0); 
+      String d =""+c;
+     String e= d.toLowerCase();
+      int xCoordinate =0;
       //find correct column based off first letter. 
+      switch (e){
+      case"a": 
+      xCoordinate=1;
+      case "b":
+      xCoordinate=3;
+      case "c":
+      xCoordinate=5;
+      case "d":
+      xCoordinate=7;
+      case "e":
+      xCoordinate=9;
+      case "f":
+      xCoordinate=11;
+      case "g":
+      xCoordinate=13;
+      case "h":
+      xCoordinate=15;
+      case "i":
+      xCoordinate=17;
+      case "j":
+      xCoordinate=19; //etcetera, fill out completly once the dictionary is that far. 
+      default:
+      break;
+      
+  }
+      /*keep this stuff untill the change to hash system has been completed,*/
       int h =1; 
       System.out.println(binarySearch(a, b,1 ));
       System.out.println("starting for loop");
-
+/*
      for (int i =0; i <rowCount; i++){
          c = b.getValueAt(1,i).toString();
          System.out.println("for loop "+ c);
@@ -109,7 +138,8 @@ public class simpleTranslator {
              break; //need to exit out of for loop here. 
          }
      } 
-     return c; 
+      */
+     return d; 
   }
   
   /**

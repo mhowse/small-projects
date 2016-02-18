@@ -29,7 +29,7 @@ public class simpleTranslator {
   private int colCount;
   private String path =""; 
   private int length=0; 
-  private int low = 3;  /*this is a hard coded number because all the lists of words start in the same row.*/ 
+  private int low = 4;  /*this is a hard coded number because all the lists of words start in the same row.*/ 
   private int hight =0; 
   private int xCoordinate=0;
   

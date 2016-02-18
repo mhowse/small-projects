@@ -25,6 +25,7 @@ public class simpleTranslator {
   private int rowCount;
   private int colCount;
   private String path =""; 
+  private int length=0; 
   
   
   /**main method
@@ -123,8 +124,9 @@ public class simpleTranslator {
       xCoordinate=19; //etcetera, fill out completly once the dictionary is that far. 
       default:
       break;
-      
-  }
+  } // end of switch case
+    
+      findLength( b, xCoordinate);
       /*keep this stuff untill the change to hash system has been completed,*/
       int h =1; 
       System.out.println(binarySearch(a, b,1 ));
@@ -142,12 +144,26 @@ public class simpleTranslator {
      return d; 
   }
   
+  /**Finds the length of the column of words in the dictionary.
+   * 
+   * @param a  the sheet that holds the words
+   * @param x  the specific column. 
+   * options: hard code line lengths, have to be updated each time words are added. 
+   * store line lengths in different document
+   */
+  
+  private void findLength(Sheet a, int x){
+      
+      
+  }
+  
   /**
    * binary searches the correct column. 
    * @returns the translation, or a non found message. 
   */
   private String binarySearch(String s,Sheet b,  int a){
       String d ="This is where the search function will go"; 
+     
       return d;
   }
   

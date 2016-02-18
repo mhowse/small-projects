@@ -11,9 +11,12 @@ import java.io.*;
 import org.jopendocument.dom.spreadsheet.Sheet;
 import org.jopendocument.dom.spreadsheet.SpreadSheet;
 /** The translations will be done word for word, from  a stored dictionary  spreadsheet. 
-  * This stored dictionary will be based on the top 1000 used German words, 
+  * The contents of the spread sheet will be a simplified form of the translations found in the 
+  * Oxford German Mini Dictionary (Oxford University Press, 2008). 
+  * Earlier in this project we used a stored dictionary will be based on the top 50 used German words, 
   * as found at 
   * http://www.languagedaily.com/learn-german/vocabulary/common-german-words
+  * 
   * The spreadsheet manipulation comes from the jOpenDocument libraries.
   */
 
@@ -26,6 +29,9 @@ public class simpleTranslator {
   private int colCount;
   private String path =""; 
   private int length=0; 
+  private int low = 3;  /*this is a hard coded number because all the lists of words start in the same row.*/ 
+  private int hight =0; 
+  private int xCoordinate=0;
   
   
   /**main method
@@ -99,7 +105,6 @@ public class simpleTranslator {
       char c=a.charAt(0); 
       String d =""+c;
      String e= d.toLowerCase();
-      int xCoordinate =0;
       //find correct column based off first letter. 
       switch (e){
       case"a": 
@@ -159,11 +164,14 @@ public class simpleTranslator {
   
   /**
    * binary searches the correct column. 
+   * Choices to be made. 
+   * Do I want to use an iterative, or recursive form of binary search?
+   * probably iterative. 
    * @returns the translation, or a non found message. 
   */
   private String binarySearch(String s,Sheet b,  int a){
       String d ="This is where the search function will go"; 
-     
+      
       return d;
   }
   

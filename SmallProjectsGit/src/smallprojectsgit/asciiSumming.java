@@ -13,8 +13,8 @@ public class asciiSumming{
         Scanner scan =new Scanner (System.in);
         while(true){
             int sum =0;
-            String s="";
-            s=scan.nextLine();
+            
+           String  s=scan.nextLine();
            char[] x= s.toCharArray();
                     for(char c: x){
                         sum +=c;

@@ -12,7 +12,7 @@ public class datedaycalculate{
     private static int year;
     private static int month;
     private static int day;
-    private static int [] monthSize = {31,28,31,30,31,30,31,31,30,31,30,31};
+    private static final int [] monthSize = {31,28,31,30,31,30,31,31,30,31,30,31};
  /**
      * @param args the command line arguments
      */
@@ -33,16 +33,37 @@ private static void calculate(){
     } 
     res+=daysAdd(month)+day;
     res %= 7;
-    
+    dayWorkOut(res);
 }
+
+/**
+ * prints out the day of the week.
+ * @param i 
+ */
+private static void dayWorkOut(int i){
+    String[] DaysofWeek = { "Sunday", "Monday" , "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" };
+    System.out.println("The date inputted is a "+DaysofWeek[i]);
+}
+/**
+ * adds the numbers of days in the months up to but not including the inputted month. 
+ * gets the values from monthSize array. 
+ * @param m for the month current to the date inputted
+ * @return  the number of days. 
+ */
 
 public static int daysAdd(int m){
     int days = 0;
-    for (int i =0; i<m; i++){
+    for (int i =1; i<m; i++){
         days +=monthSize[i-1];
     }
     return days;
 }
+
+/**
+ * Checks to see if the year inputted is a leap year. 
+ * @param y
+ * @return 
+ */
 
 public static boolean isLeapYear(int y) {
         if (y % 4 != 0){

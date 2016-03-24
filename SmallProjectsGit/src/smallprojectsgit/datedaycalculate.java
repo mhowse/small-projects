@@ -12,11 +12,12 @@ public class datedaycalculate{
     private static int year;
     private static int month;
     private static int day;
-    private int jan, feb, march,april,may, june,july, aug,sept, oct,nov,dec;
+    private static int [] monthSize = {31,28,31,30,31,30,31,31,30,31,30,31};
  /**
      * @param args the command line arguments
      */
 public static void main (String[] args){
+    
 simpleInput();
 calculate();
 }//end main method
@@ -28,9 +29,16 @@ private static void calculate(){
         if (month<3){
             res--;
         }
-    }
+       
+    } 
+    daysAdd(month);
     
    
+}
+
+public static int daysAdd(int m){
+    
+    return 0;
 }
 
 public static boolean isLeapYear(int y) {

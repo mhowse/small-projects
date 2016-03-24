@@ -31,14 +31,17 @@ private static void calculate(){
         }
        
     } 
-    daysAdd(month);
+    res+=daysAdd(month)+day;
+    res %= 7;
     
-   
 }
 
 public static int daysAdd(int m){
-    
-    return 0;
+    int days = 0;
+    for (int i =0; i<m; i++){
+        days +=monthSize[i-1];
+    }
+    return days;
 }
 
 public static boolean isLeapYear(int y) {

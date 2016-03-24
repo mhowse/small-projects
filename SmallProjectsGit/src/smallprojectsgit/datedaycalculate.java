@@ -55,7 +55,7 @@ private static void simpleInput(){
 System.out.println("Enter in the year. As a number, so 1993 instead of nineteen ninety three. ");
     year=scan.nextInt();
     System.out.println("Enter in the month as a number, so january = 1; ect"); 
-    month =scan.next();
+    month =scan.nextInt();
     System.out.println("Enter in the day of the month as a number i.e. 10, 12, 13");
     day = scan.nextInt();
 }//end method

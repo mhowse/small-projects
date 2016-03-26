@@ -77,7 +77,7 @@ public static int daysAdd(int m){
 
 /**
  * Checks to see if the year inputted is a leap year. 
- * @param y
+ * @param y the year to be checked.
  * @return 
  */
 
@@ -121,10 +121,18 @@ private static void Input(){
         }
 }//end method
 
+/**
+ * processes the input taken from the user in Input(), makes it so that the data is in the right places for calculate();
+ * @param input 
+ */
   public static void process(String input) {
         String[] tokens = input.split("-");
         day = Integer.parseInt(tokens[0]);
          month = Integer.parseInt(tokens[1]);
          year = Integer.parseInt(tokens[2]);
     }
+  
+  
+  
+  
 }//end class

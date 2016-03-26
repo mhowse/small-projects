@@ -18,9 +18,24 @@ public class datedaycalculate{
      */
 public static void main (String[] args){
     
-//simpleInput();
-    Input();
-calculate();
+        try (Scanner scans = new Scanner (System.in)) {
+                System.out.println("Welcome to this date to day-of-week calculator");
+                System.out.println("Do you want to enter in your date  in dd-mm-yyyy format?");
+                System.out.println("If so, press y. Otherwise press n");
+                if (scans.next().equals("y")){
+                    Input(); 
+                    calculate();
+                }
+                else {
+                    simpleInput();
+                    calculate();
+                }
+        } catch (Exception err){
+            System.out.println("Error found");
+        System.out.println(err.getMessage());
+        // e.printStackTrace(); for testing and finding problems
+        System.out.println("error message end");
+        }
 }//end main method
 
 private static void calculate(){

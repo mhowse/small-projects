@@ -18,7 +18,8 @@ public class datedaycalculate{
      */
 public static void main (String[] args){
     
-simpleInput();
+//simpleInput();
+    Input();
 calculate();
 }//end main method
 
@@ -83,13 +84,32 @@ public static boolean isLeapYear(int y) {
  * simpleInput takes the user input, directs the user quite throughly, to make it easier to process the date. 
  */
 private static void simpleInput(){
-   Scanner scan = new Scanner(System.in);
-System.out.println("Enter in the year. As a number, so 1993 instead of nineteen ninety three. ");
-    year=scan.nextInt();
-    System.out.println("Enter in the month as a number, so january = 1; ect"); 
-    month =scan.nextInt();
-    System.out.println("Enter in the day of the month as a number i.e. 10, 12, 13");
-    day = scan.nextInt();
+        try (Scanner scan = new Scanner(System.in)) {
+            System.out.println("Enter in the year. As a number, so 1993 instead of nineteen ninety three. ");
+            year=scan.nextInt();
+            System.out.println("Enter in the month as a number, so january = 1; ect");
+            month =scan.nextInt();
+            System.out.println("Enter in the day of the month as a number i.e. 10, 12, 13");
+            day = scan.nextInt();
+        }
 }//end method
 
+
+/**
+ * Input takes the user input, directs the user quite throughly, to make it easier to process the date. 
+ */
+private static void Input(){
+        try (Scanner scan = new Scanner(System.in)) {
+            System.out.println("Please enter date, using format dd-mm-yyyy");
+           String derp = scan.next();
+           process(derp);
+        }
+}//end method
+
+  public static void process(String input) {
+        String[] tokens = input.split("-");
+        day = Integer.parseInt(tokens[0]);
+         month = Integer.parseInt(tokens[1]);
+         year = Integer.parseInt(tokens[2]);
+    }
 }//end class

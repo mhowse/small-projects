@@ -3,7 +3,12 @@
  * mhowse march 2016
  */
 package smallprojectsgit;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 
@@ -30,13 +35,41 @@ public static void main (String[] args){
                     simpleInput();
                     calculate();
                 }
+                scans.close();
         } catch (Exception err){
             System.out.println("Error found");
         System.out.println(err.getMessage());
         // e.printStackTrace(); for testing and finding problems
         System.out.println("error message end");
         }
+           
+        try {
+            lotsOfDates();
+        } catch (IOException ex) {
+            Logger.getLogger(datedaycalculate.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
 }//end main method
+
+
+public static void lotsOfDates() throws IOException{
+    System.out.println("Enter your dates in \"dd-mm-yy\" format");
+    System.out.println("Seperate dates with commas, for example");
+    System.out.println("31-07-1993,26-03-2016, 12-01-1981");
+    BufferedReader inputting = new BufferedReader(new InputStreamReader(System.in));
+    String input;
+        input = inputting.readLine();
+    String[] dates = input.split("-");
+    for (int i =0; i<= dates.length; i++){
+        process(dates[i]);
+        calculate();
+    }
+    }
+    
+
+/**
+ * Does the work of calculating what day the date works out to. 
+ */
 
 private static void calculate(){
     int r = year -1900;
@@ -131,6 +164,7 @@ private static void Input(){
          month = Integer.parseInt(tokens[1]);
          year = Integer.parseInt(tokens[2]);
     }
+
   
   
   

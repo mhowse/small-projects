@@ -52,12 +52,16 @@ public static void main (String[] args){
 }//end main method
 
 
+
 public static void lotsOfDates() throws IOException{
-    System.out.println("Enter your dates in \"dd-mm-yy\" format");
+    BufferedReader inputting = new BufferedReader(new InputStreamReader(System.in));
+     System.out.println("Enter your dates in \"dd-mm-yy\" format");
     System.out.println("Seperate dates with commas, for example");
     System.out.println("31-07-1993,26-03-2016, 12-01-1981");
-    BufferedReader inputting = new BufferedReader(new InputStreamReader(System.in));
     String input;
+       while((input = inputting.readLine())!=null){
+           System.out.println(input);
+    }
         input = inputting.readLine();
     String[] dates = input.split("-");
     for (int i =0; i<= dates.length; i++){

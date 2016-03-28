@@ -8,21 +8,21 @@ package smallprojectsgit;
 
 
 public class numberNumeralConverter {
-private final int [] numerals={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,30,40,50,60,70,80,90,100,1000,};
-private final  String [] words={"one","two","three","four", "five","six","seven", "eight","nine","ten",
+private static final int [] numerals={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,30,40,50,60,70,80,90,100,1000,};
+private static final  String [] words={"one","two","three","four", "five","six","seven", "eight","nine","ten",
                           "eleven", "twelve", "thirteen","fourteen", "fifteen", "sixteen",
                            "seventeen", "eighteen", "nineteen", "twenty",
                             "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety", "hundred", "thousand"}; 
-private final String[] test= {"one hundred and seventy six", "ninety nine", "two thousand seven Hundred and Forty Three"};
+private static final String[] test= {"one hundred and seventy six", "ninety nine", "two thousand seven Hundred and Forty Three"};
 
 
 public static void main (String [] args){
-  
-     
-            
+  for (String t :test){
+      convertToNumeral(t);
+  }            
 }//end main method
 
-private void convertToNumeral(String input){
+private static void convertToNumeral(String input){
     input =input.toLowerCase();
     input = input.replaceAll(",", "");
     input = input.replaceAll("-", " ");
@@ -37,7 +37,7 @@ private void convertToNumeral(String input){
     }
 }//end convert
 
-private void findNumber(String i){
+private static void findNumber(String i){
     int num;
     for (int ind=0; ind<words.length; ind++){
         if(words[ind].equals(i)){

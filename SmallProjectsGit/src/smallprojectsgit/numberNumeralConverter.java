@@ -14,7 +14,7 @@ private static final  String [] words={"one","two","three","four", "five","six",
                           "eleven", "twelve", "thirteen","fourteen", "fifteen", "sixteen",
                            "seventeen", "eighteen", "nineteen", "twenty",
                             "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety", "hundred", "thousand"}; 
-private static final String[] test= {"one hundred and seventy six", "ninety nine", "two thousand seven Hundred and Forty Three", "minus seventy two"};
+private static final String[] test= {"eleven","one hundred and seventy six", "ninety nine", "two thousand seven Hundred and Forty Three", "minus seventy two"};
 private static LinkedList<Integer> list = new LinkedList<>();
 private static boolean positive=true;
 
@@ -41,8 +41,17 @@ private static void runConversion(String c){
 private static void collapseList(){
     System.out.println("List equals "+list.toString());
     int [] results = new int [list.size()];
-    System.out.println("Size is"+list.size());
+    System.out.println("Size is "+list.size());
    int result =0;
+    if (list.size()==1){
+        result = list.get(0);
+         if(positive){
+            System.out.println("result is "+ result);
+        }else {
+            System.out.println("result is -"+result);
+         }
+         return;
+    }   //first 20 numbers sorted. 
     
     for (int i =list.size(); i==0; i--){
         

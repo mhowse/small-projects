@@ -43,7 +43,7 @@ private static void collapseList(){
     int [] results = new int [list.size()];
     System.out.println("Size is "+list.size());
    int result =0;
-    if (list.size()==1){
+    if (list.size()==1){ //if there is only one item in the  list then the number is less then twenty one.Or is something like 100, 1000, etc.  
         result = list.get(0);
          if(positive){
             System.out.println("result is "+ result);
@@ -53,9 +53,14 @@ private static void collapseList(){
          return;
     }   //first 20 numbers sorted. 
     
-    for (int i =list.size(); i==0; i--){
+    System.out.println("At the while loop");
+    while(!list.isEmpty()){ //while there is still stuff in the list. m
+        result += list.pop(); //take the lowest part. i.e. 
         
-        }
+        System.out.println("first pop, result now"+ result);
+        result+=list.pop();
+        System.out.println("Second pop, result now"+result);
+    }
 
         if(positive){
             System.out.println("result is "+ result);

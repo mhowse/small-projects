@@ -14,7 +14,7 @@ private static final  String [] words={"one","two","three","four", "five","six",
                           "eleven", "twelve", "thirteen","fourteen", "fifteen", "sixteen",
                            "seventeen", "eighteen", "nineteen", "twenty",
                             "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety", "hundred", "thousand"}; 
-private static final String[] test= {"one hundred and seventy six", "ninety nine", "two thousand seven Hundred and Forty Three"};
+private static final String[] test= {"one hundred and seventy six", "ninety nine", "two thousand seven Hundred and Forty Three", "minus seventy two"};
 private static LinkedList<Integer> list = new LinkedList<>();
 private static boolean positive=true;
 
@@ -24,6 +24,10 @@ public static void main (String [] args){
   }            
 }//end main method
 
+/**
+ * 
+ * @param c 
+ */
 private static void runConversion(String c){
     convertToNumeral(c);
     collapseList();
@@ -35,11 +39,25 @@ private static void runConversion(String c){
  * {19, 90, 3} becomes 1993.
  */
 private static void collapseList(){
+    System.out.println("List equals "+list.toString());
+    int [] results = new int [list.size()];
+    System.out.println("Size is"+list.size());
+   int result =0;
     
+    for (int i =list.size(); i==0; i--){
+        
+        }
+
+        if(positive){
+            System.out.println("result is "+ result);
+        }else 
+            System.out.println("result is -"+result);
+      
+    }//end collapseList
 
 
 
-}
+
 
 /**
  * processes the string,

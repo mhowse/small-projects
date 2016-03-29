@@ -60,37 +60,35 @@ private static void collapseList(){
          return;
     }   //first 20 numbers sorted. 
     
-   System.out.println("At the while loop");
-   System.out.println("Result ="+result);
-    
+   //System.out.println("At the while loop");
+   //System.out.println("Result ="+result); 
     while(!list.isEmpty()){ //while there is still stuff in the list. 
        int temp = list.pop();           //take the lowest part. i.e 
-        System.out.println("just popped, temp ="+temp);
-        System.out.println("result ="+result);
-                
+      //  System.out.println("just popped, temp ="+temp);
+        //System.out.println("result ="+result);      
         if (temp== 100){
            t *=100;
-           System.out.println("temp=100, t ="+t);
+          // System.out.println("temp=100, t ="+t);
         } else{
         if(temp == 1000){
             t *= temp;
              result += t;
              t = 0;
-             System.out.println("if t ==1000, Result ="+result);
+            // System.out.println("if t ==1000, Result ="+result);
         } else{
-            System.out.println("t+=temp, t ="+t+"temp ="+temp);
+            //System.out.println("t+=temp, t ="+t+"temp ="+temp);
             t+=temp;
         }
         }
-        System.out.println("last part of while loop, back to top");
-                System.out.println("t="+t);
+       // System.out.println("last part of while loop, back to top");
+              //  System.out.println("t="+t);
     }
     
-    System.out.println("After while loop");
-    System.out.println("Result ="+result);
-    System.out.println("t ="+t);
+   // System.out.println("After while loop");
+   // System.out.println("Result ="+result);
+  //  System.out.println("t ="+t);
     result+=t;
-    System.out.println("Result ="+result);
+  //  System.out.println("Result ="+result);
         if(positive){
             System.out.println("result is "+ result);
         }else 

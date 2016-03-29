@@ -19,9 +19,13 @@ private static LinkedList<Integer> list = new LinkedList<>();
 private static boolean positive=true;
 
 public static void main (String [] args){
-  for (String t :test){
+    
+      System.out.println("String = "+test[1]);
+      runConversion(test[1]);
+ for (String t :test){
+      System.out.println("String = "+t);
       runConversion(t);
-  }            
+  }          
 }//end main method
 
 /**
@@ -42,8 +46,11 @@ private static void collapseList(){
     System.out.println("List equals "+list.toString());
     int [] results = new int [list.size()];
     System.out.println("Size is "+list.size());
-   int result =0;
+    int result =0; 
+    int t =0;
+    
     if (list.size()==1){ //if there is only one item in the  list then the number is less then twenty one.Or is something like 100, 1000, etc.  
+        System.out.println("list one item long");
         result = list.get(0);
          if(positive){
             System.out.println("result is "+ result);
@@ -53,21 +60,43 @@ private static void collapseList(){
          return;
     }   //first 20 numbers sorted. 
     
-    System.out.println("At the while loop");
-    while(!list.isEmpty()){ //while there is still stuff in the list. m
-        result += list.pop(); //take the lowest part. i.e. 
-        
-        System.out.println("first pop, result now"+ result);
-        result+=list.pop();
-        System.out.println("Second pop, result now"+result);
+   System.out.println("At the while loop");
+   System.out.println("Result ="+result);
+    
+    while(!list.isEmpty()){ //while there is still stuff in the list. 
+       int temp = list.pop();           //take the lowest part. i.e 
+        System.out.println("just popped, temp ="+temp);
+        System.out.println("result ="+result);
+                
+        if (temp== 100){
+           t *=100;
+           System.out.println("temp=100, t ="+t);
+        } else{
+        if(temp == 1000){
+            t *= temp;
+             result += t;
+             t = 0;
+             System.out.println("if t ==1000, Result ="+result);
+        } else{
+            System.out.println("t+=temp, t ="+t+"temp ="+temp);
+            t+=temp;
+        }
+        }
+        System.out.println("last part of while loop, back to top");
+                System.out.println("t="+t);
     }
-
+    
+    System.out.println("After while loop");
+    System.out.println("Result ="+result);
+    System.out.println("t ="+t);
+    result+=t;
+    System.out.println("Result ="+result);
         if(positive){
             System.out.println("result is "+ result);
         }else 
             System.out.println("result is -"+result);
       
-    }//end collapseList
+    }//end collapseList*/
 
 
 

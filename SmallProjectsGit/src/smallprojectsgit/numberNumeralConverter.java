@@ -16,6 +16,7 @@ private static final  String [] words={"one","two","three","four", "five","six",
                             "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety", "hundred", "thousand"}; 
 private static final String[] test= {"one hundred and seventy six", "ninety nine", "two thousand seven Hundred and Forty Three"};
 private static LinkedList<Integer> list = new LinkedList<>();
+private static boolean positive=true;
 
 public static void main (String [] args){
   for (String t :test){
@@ -35,6 +36,9 @@ private static void runConversion(String c){
  */
 private static void collapseList(){
     
+
+
+
 }
 
 /**
@@ -50,8 +54,12 @@ private static void convertToNumeral(String input){
     int size=0;
     for (String token : tokens) {
         if (!token.equals("and")) {
+            if(token.equals("minus")|| token.equals("negative")){
+                positive = false;
+            } else{
             findNumber(token);
             size++;
+            }
         }
         
     }

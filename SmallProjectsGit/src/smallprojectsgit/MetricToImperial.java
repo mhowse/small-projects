@@ -17,7 +17,25 @@ import java.util.logging.Logger;
 public class MetricToImperial {
     
     
-    public  void main(String [] args){
+    public static  void main(String [] args){
+         File f = new File("."); // current directory
+
+    File[] files = f.listFiles();
+    for (File file : files) {
+             try {
+                 if (file.isDirectory()) {
+                     System.out.print("directory:");
+                 } else {
+                     System.out.print("     file:");
+                 }
+                 System.out.println(file.getCanonicalPath());
+             } catch (IOException ex) {
+                 Logger.getLogger(MetricToImperial.class.getName()).log(Level.SEVERE, null, ex);
+             }
+    }
+        
+        
+        
         List<Integer> metric = new ArrayList<>();
         List<String> imperial = new ArrayList<>();
         try {
@@ -40,14 +58,27 @@ public class MetricToImperial {
 
         
     }// end main method
+    
      /**
+      * converts metric measurements (in cm) to feet and inches. 
+      * 1cm = .39 inches. 
       * one inch = 2.54 cm. 
+      * one foot = 30 cm. 
       * @param s
       * @return 
       */
-    private String convert(int s){
+    private static String convert(int s){
         double inch =s/2.54; 
-       return "derp"; 
+        double feet=0;
+        if(inch<12){
+            return ""+inch+"\"";
+        }
+        while(inch>12){
+            inch = inch-12; 
+            feet++; 
+        }
+        String total =""+feet+"\'"+" "+inch+"\"";
+       return total; 
     }
     
 }//end class

@@ -13,12 +13,55 @@ public class CaesarCipher{
    
    private static final  List<String> phrase = new ArrayList<>();
    private static final  List<String> result = new ArrayList<>();
+   private static final  List<String> decoderesult = new ArrayList<>();
+   
     public static void main (String [] args) throws FileNotFoundException{
         input(); 
         phraseHandling();
         substitution();
         printPhrase();
+        decode();
+        printDecode();
+        
     }//end main method
+    /**
+     * 
+     */
+    private static void printDecode(){   
+        System.out.println("Printing decoded phrase.");
+        for(String s: decoderesult){
+            System.out.print("  "+s);
+        }
+    }
+        
+    
+    /**
+     * 
+     */
+    private static void decode(){
+        System.out.println("decode running");
+        System.out.println("Shift ="+shift);
+        for(String s: result){ //for each string-word in the phrase list
+            char[] c= s.toCharArray();
+            char [] r = new char [c.length];
+            int i =-1;
+            for(char ch: c){ //for each character in the string.
+                i++;
+              if(Character.isLetter(ch)){ //ignore punctuation.
+                  System.out.println(ch);
+                  ch = ((char)('A'+(ch-'A'-shift)%26));
+                  System.out.println("Changed ch = "+ch);
+                  
+                 //shift the value of that character an amount determined by the shift amount. 
+            }
+              r[i]=ch;
+            }
+            String str =new String(r); 
+            decoderesult.add(str); //add the resultant string onto the result list.m
+        }
+     
+    }
+    
     
     /**
      * prints out the original phrase and the ciphered result. 

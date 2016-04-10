@@ -11,22 +11,38 @@ import java.util.*;
 public class CaesarCipher{
    private static int shift; 
    
-   private static  List<String> phrase = new ArrayList<>();
-   //private static  List<String> result = new ArrayList<>();
+   private static final  List<String> phrase = new ArrayList<>();
+   private static final  List<String> result = new ArrayList<>();
     public static void main (String [] args) throws FileNotFoundException{
         input(); 
         phraseHandling();
         substitution();
+        printPhrase();
     }//end main method
     
     
+    private static void printPhrase(){
+        System.out.println("Printing phrase.");
+        for(String s: phrase){
+            System.out.print("  "+s);
+        }
+        System.out.println("");
+        System.out.println("Printing result.");
+                for(String s: result){
+            System.out.print("  "+s);
+        }
+    }
+    
     private static void substitution(){
+        System.out.println("Substitution running");
         char shft =(char) shift; 
         for(String s: phrase){ //for each string-word in the phrase list
             char[] c= s.toCharArray();
             for(char ch: c){ //for each character in the string.
                 ch+=shft; //shift the value of that character an amount determined by the shift amount. 
             }
+            String str =new String(c);
+            result.add(str);
         }
     }
    

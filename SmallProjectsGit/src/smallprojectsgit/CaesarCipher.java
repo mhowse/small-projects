@@ -42,18 +42,31 @@ public class CaesarCipher{
     private static void substitution(){
         System.out.println("Substitution running");
         System.out.println("Shift ="+shift);
-        char a ='a';
-        System.out.println("This means that 'a' will become "+(a+shift));
-        char shft =(char) shift; 
+        char a = 'a';
+        System.out.println("This means that 'a' will become "+ a);
+        
         for(String s: phrase){ //for each string-word in the phrase list
             char[] c= s.toCharArray();
+            char [] r = new char [c.length];
+            int i =-1;
             for(char ch: c){ //for each character in the string.
-                ch+=shft; //shift the value of that character an amount determined by the shift amount. 
+                i++;
+              if(Character.isLetter(ch)){ //ignore punctuation.
+                  System.out.println(ch);
+                  ch = ((char)('A'+(ch-'A'+shift)%26));
+                  System.out.println("Changed ch = "+ch);
+                  
+                 //shift the value of that character an amount determined by the shift amount. 
             }
-            String str =new String(c);
-            result.add(str);
+              r[i]=ch;
+            }
+            String str =new String(r); 
+            result.add(str); //add the resultant string onto the result list.m
         }
+     
     }
+    
+    
    /**
     * phraseHandling() loads the file with the message to be ciphered. 
     * @throws FileNotFoundException  if the file isn't where the program thinks it is. 

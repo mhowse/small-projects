@@ -20,7 +20,9 @@ public class CaesarCipher{
         printPhrase();
     }//end main method
     
-    
+    /**
+     * prints out the original phrase and the ciphered result. 
+     */
     private static void printPhrase(){
         System.out.println("Printing phrase.");
         for(String s: phrase){
@@ -32,9 +34,16 @@ public class CaesarCipher{
             System.out.print("  "+s);
         }
     }
-    
+    /**
+     * substitution()
+     * Does the work of shifting letters down the alphabet.
+     * i.e. substituting one letter for another. 
+     */
     private static void substitution(){
         System.out.println("Substitution running");
+        System.out.println("Shift ="+shift);
+        char a ='a';
+        System.out.println("This means that 'a' will become "+(a+shift));
         char shft =(char) shift; 
         for(String s: phrase){ //for each string-word in the phrase list
             char[] c= s.toCharArray();
@@ -45,7 +54,10 @@ public class CaesarCipher{
             result.add(str);
         }
     }
-   
+   /**
+    * phraseHandling() loads the file with the message to be ciphered. 
+    * @throws FileNotFoundException  if the file isn't where the program thinks it is. 
+    */
     private static void phraseHandling() throws FileNotFoundException{
         FileReader fileR =  new FileReader("inputtext.txt");
        try (BufferedReader buff = new BufferedReader(fileR)) {
@@ -59,10 +71,12 @@ public class CaesarCipher{
        }          
         } 
         
-        
+       
     
-    
-    
+    /**
+     * input() takes input from user, to set shift variable,
+     * i.e how many places down the alphabet letters will shift.
+     */
     
     private  static void input(){
        try (Scanner scan = new Scanner (System.in)) {

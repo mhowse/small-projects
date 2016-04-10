@@ -10,6 +10,7 @@ import java.util.*;
 
 public class CaesarCipher{
    private static int shift; 
+   private static int deShift;
    
    private static final  List<String> phrase = new ArrayList<>();
    private static final  List<String> result = new ArrayList<>();
@@ -41,15 +42,28 @@ public class CaesarCipher{
     private static void decode(){
         System.out.println("decode running");
         System.out.println("Shift ="+shift);
+         deShift = 26-10;  //how far back we shift each letter. 
+         System.out.println("deShift ="+deShift);
         for(String s: result){ //for each string-word in the phrase list
             char[] c= s.toCharArray();
             char [] r = new char [c.length];
             int i =-1;
             for(char ch: c){ //for each character in the string.
-                i++;
+                i++; 
               if(Character.isLetter(ch)){ //ignore punctuation.
                   System.out.println(ch);
-                  ch = ((char)('A'+(ch-'A'-shift)%26));
+                  if (Character.isLetter(ch)) {
+                if (Character.isUpperCase(ch)) {
+                    ch = ((char) ('A' + (ch - 'A' + deShift) % 26 ));
+                } else {
+                   ch = ((char) ('a' + (ch - 'a' + deShift) % 26 ));
+                }
+            } else {
+                      
+                  } 
+                  // compare difference between remembering  what we did to deShift.
+                  //  ch = ((char)('A'+(ch-'A'+shift)%26));
+                  
                   System.out.println("Changed ch = "+ch);
                   
                  //shift the value of that character an amount determined by the shift amount. 
@@ -96,7 +110,15 @@ public class CaesarCipher{
                 i++;
               if(Character.isLetter(ch)){ //ignore punctuation.
                   System.out.println(ch);
-                  ch = ((char)('A'+(ch-'A'+shift)%26));
+                  if (Character.isLetter(ch)) {
+                if (Character.isUpperCase(ch)) {
+                    ch = ((char) ('A' + (ch - 'A' + shift) % 26 ));
+                } else {
+                   ch = ((char) ('a' + (ch - 'a' + shift) % 26 ));
+                }
+            } else {
+                      
+                  }
                   System.out.println("Changed ch = "+ch);
                   
                  //shift the value of that character an amount determined by the shift amount. 

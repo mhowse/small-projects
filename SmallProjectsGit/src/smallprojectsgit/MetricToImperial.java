@@ -18,10 +18,9 @@ public class MetricToImperial {
     
     
     public static  void main(String [] args){
-         File f = new File("."); // current directory
-
-    File[] files = f.listFiles();
-    for (File file : files) {
+        File f = new File("."); // current directory
+        File[] files = f.listFiles();
+          for (File file : files) {
              try {
                  if (file.isDirectory()) {
                      System.out.print("directory:");
@@ -32,10 +31,8 @@ public class MetricToImperial {
              } catch (IOException ex) {
                  Logger.getLogger(MetricToImperial.class.getName()).log(Level.SEVERE, null, ex);
              }
-    }
-        
-        
-        
+          }
+          
         List<Integer> metric = new ArrayList<>();
         List<String> imperial = new ArrayList<>();
         try {
@@ -45,6 +42,7 @@ public class MetricToImperial {
                 metric.add(scan.nextInt()); 
             }
         } //end main method.
+        
         catch (FileNotFoundException ex) {
             Logger.getLogger(MetricToImperial.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -70,6 +68,7 @@ public class MetricToImperial {
     private static String convert(int s){
         double inch =s/2.54; 
         double feet=0;
+        double yards =0;
         if(inch<12){
             return ""+inch+"\"";
         }
@@ -77,8 +76,31 @@ public class MetricToImperial {
             inch = inch-12; 
             feet++; 
         }
-        String total =""+feet+"\'"+" "+inch+"\"";
+        if (feet >= 3){
+            while(feet>3){
+                yards++; 
+            feet = feet -3; 
+            }
+        }
+        
+        String total =""+yards+"  yards\t"+ feet+"\'"+" "+inch+"\"";
        return total; 
     }
     
+    private static void doubleCheck(){
+       File f = new File("."); // current directory
+        File[] files = f.listFiles();
+          for (File file : files) {
+             try {
+                 if (file.isDirectory()) {
+                     System.out.print("directory:");
+                 } else {
+                     System.out.print("     file:");
+                 }
+                 System.out.println(file.getCanonicalPath());
+             } catch (IOException ex) {
+                 Logger.getLogger(MetricToImperial.class.getName()).log(Level.SEVERE, null, ex);
+             }
+    }
+    }
 }//end class

@@ -26,7 +26,7 @@ public class CaesarCipher{
         
     }//end main method
     /**
-     * 
+     * prints out the decoded phrase.
      */
     private static void printDecode(){   
         System.out.println("Printing decoded phrase.");
@@ -37,7 +37,7 @@ public class CaesarCipher{
         
     
     /**
-     * 
+     * decode() reverses the encryption..
      */
     private static void decode(){
         System.out.println("decode running");

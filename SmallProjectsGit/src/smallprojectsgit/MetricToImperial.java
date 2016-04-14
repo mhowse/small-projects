@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.text.DecimalFormat;
 /**
  * Will convert metric input in cm, to feet and inches. 
  */
@@ -92,8 +93,9 @@ public class MetricToImperial {
             feet = feet -3; 
             }
         }
-        
-        String total =""+yards+"  yards\t"+ feet+"\'"+" "+inch+"\"";
+        DecimalFormat decimal = new DecimalFormat("##.##");
+        String formatted =decimal.format(inch);
+        String total =""+yards+"yards "+ feet+"\'"+" "+formatted+"\"";
        return total; 
     }
     

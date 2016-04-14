@@ -57,6 +57,16 @@ public class MetricToImperial {
         
     }// end main method
     
+    
+    /**
+     * converts(int s) allows for calling convert from other classes 
+     * despite concert being private. 
+     * @param s
+     * @return 
+     */
+    public static String converts (int s){
+        return convert(s);
+    }
      /**
       * converts metric measurements (in cm) to feet and inches. 
       * 1cm = .39 inches. 

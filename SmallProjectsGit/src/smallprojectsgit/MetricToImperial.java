@@ -57,6 +57,21 @@ public class MetricToImperial {
 
         
     }// end main method
+    
+     /**
+     * conversion for miles to km 
+     * 1 km = 0.621371 miles
+     * @param s
+     * @return 
+     */
+    public static String milesToKM(double s){
+        double km = (s *1.6);
+      
+        DecimalFormat decimal = new DecimalFormat("##.##");
+        String formatted =decimal.format(km);
+        return formatted;
+    }
+    
     /**
      * conversion for km to miles. 
      * 1 km = 0.621371 miles

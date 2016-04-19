@@ -1,3 +1,5 @@
+package smallprojectsgit;
+
 /**
  * magicSquare.java
  * mhowse april 2016
@@ -7,6 +9,10 @@ public class magicSquare {
     
     private static final int [] [] sample = new int [3][3];
     private static final int goal = 15; 
+    private  static boolean colA = false,colB = false,colC = false;
+    private static boolean rowA = false, rowB = false, rowC = false;
+    private static boolean diagMain =false, diagSecond=false;
+        
     public static void main (String [] args){
         fillSample();
         
@@ -17,39 +23,38 @@ public class magicSquare {
      * such that it is accurate (ie add required lines add to 15).
      */
     private static void check3(int [][] arr){
-        boolean colA = false,colB = false,colC = false;
-        boolean rowA,rowB,rowC;
-        boolean diagMain, diagSecond;
+        for(int i =0; i <3; i++){
+            rowCheck(i,arr);
+            //colCheck(i,arr);
+    
+        }
+    }
+    /**
+     * rowCheck will check the given row, to see if it sums to 15. 
+     * @param i the y (height in grid) coordinate of the row to be checked. 
+     * @param ar  The magic square
+     */
+    private static void rowCheck(int i, int[][]ar){
         int total;
-        for(int i =0; i <3; i ++){  // for each column .
-            total = arr[i][0] +arr[i][1]+arr [i][2];
+            total = ar[0][i] +ar[1][i]+ar [2][i];
             if (total == goal){
                 switch (i){
                     case 0:
-                        colA = true;
+                        rowA = true;
                         break;
                     case 1:
-                        colB =true;
+                        rowB =true;
                         break;
                     case 2:
-                        colC = true;
+                        rowC = true;
                         break;
                     default:
-                        System.out.println("Error in the switch case section of columns for check 3");
-                        System.out.println("i = "+i);
-                        System.out.println("colA ="+colA+" colB="+colB+" colC="+colC);        
-                }
+                        System.out.println("Error in the switch case section of rows for check 3");
+                        System.out.println("i = "+i);            
+                } //end switch;
             }
-            total =0;
-        } //end column check. 
-       
-        
-        
-        
-        
-        
-        
-    }
+         } //end method
+    
     
     /**
      * Fills the sample magic square to test. 

@@ -14,8 +14,9 @@ public class magicSquare {
     private static boolean diagMain =false, diagSecond=false;
         
     public static void main (String [] args){
+        boolean right =false;
         fillSample();
-        
+        check3
     }//end main method
     
     /**
@@ -30,6 +31,22 @@ public class magicSquare {
         }
         diagMain = ((total=( arr[0][0]+arr[0][1]+arr[0][2])) ==goal);
         diagSecond = ((total=( arr[2][2]+arr[0][1]+arr[2][0])) ==goal);
+       if ( checkBoolean()){
+           System.out.println("The square is magic");
+       } else{ 
+           System.out.println("The square is false");
+       }
+    }//end method
+    
+    /**
+     * checkBoolean checks whether  all the relevant class variables are set to true, 
+     * if so returns true. if swau 
+     * @return 
+     */
+    private static boolean  checkBoolean(){
+        int Lines = 8; //3 columns, 3 rows, 2 diagonals. 
+        
+      return false;  
     }
     /**
      * rowCheck will check the given row, to see if it sums to 15. 

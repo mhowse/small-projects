@@ -29,10 +29,12 @@ public class magicSquare {
             rowCheck(i,arr);
             colCheck(i,arr);
         }
-        
-        diagMain = ((total=( arr[0][0]+arr[0][1]+arr[0][2])) ==goal);
-        
-        diagSecond = ((total=( arr[2][2]+arr[0][1]+arr[2][0])) ==goal);
+        int mainTotal = arr[0][0]+arr[1][1]+arr[2][2];
+        System.out.println("Main total = "+mainTotal);
+        diagMain = (mainTotal ==goal);
+        int secondTotal =  arr[0][2]+arr[1][1]+arr[2][0];
+        System.out.println("Second total = "+secondTotal);
+        diagSecond = (secondTotal ==goal);
        if ( checkBoolean()){
            System.out.println("The square is magic");
        } else{ 

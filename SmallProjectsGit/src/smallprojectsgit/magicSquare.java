@@ -16,7 +16,7 @@ public class magicSquare {
     public static void main (String [] args){
         boolean right =false;
         fillSample();
-        check3
+        check3(sample);
     }//end main method
     
     /**
@@ -29,7 +29,9 @@ public class magicSquare {
             rowCheck(i,arr);
             colCheck(i,arr);
         }
+        
         diagMain = ((total=( arr[0][0]+arr[0][1]+arr[0][2])) ==goal);
+        
         diagSecond = ((total=( arr[2][2]+arr[0][1]+arr[2][0])) ==goal);
        if ( checkBoolean()){
            System.out.println("The square is magic");
@@ -44,8 +46,17 @@ public class magicSquare {
      * @return 
      */
     private static boolean  checkBoolean(){
-        int Lines = 8; //3 columns, 3 rows, 2 diagonals. 
-        
+         //3 columns, 3 rows, 2 diagonals. 
+        if (( colA == true)&& (colB == true) &&(colC ==true)){
+            System.out.println("passed first three trues");
+            if((rowA ==true) &&(rowB == true)&& (rowC ==true)){
+                System.out.println("passed second three trues");
+                if((diagMain == true)&& (diagSecond ==true)){
+                    System.out.println("passed last two trues");
+                    return true;
+                }
+            }
+        }
       return false;  
     }
     /**

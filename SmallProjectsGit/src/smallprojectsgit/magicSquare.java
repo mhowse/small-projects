@@ -51,8 +51,17 @@ public class magicSquare {
      * @param cnt 
      */
     private static void place(int curr, int cnt){
-       
-    }
+       if(cnt <4){
+           inputted[cnt][0] = curr;
+       } 
+       else if( cnt<7){
+           inputted [cnt -3][1] = curr;
+       }
+       else if( cnt >6){
+           inputted [cnt-6][2]= curr;
+       }
+    } 
+    
     /**
      * check3 will check that a  3 by 3 magic square is 
      * such that it is accurate (ie add required lines add to 15).

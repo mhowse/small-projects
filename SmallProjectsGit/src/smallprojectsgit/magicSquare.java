@@ -1,5 +1,7 @@
 package smallprojectsgit;
 
+import java.util.Scanner;
+
 /**
  * magicSquare.java
  * mhowse april 2016
@@ -8,6 +10,7 @@ package smallprojectsgit;
 public class magicSquare {
     
     private static final int [] [] sample = new int [3][3];
+    private static int [] [] inputted = new int [3][3];
     private static final int goal = 15; 
     private  static boolean colA = false,colB = false,colC = false;
     private static boolean rowA = false, rowB = false, rowC = false;
@@ -17,8 +20,35 @@ public class magicSquare {
         boolean right =false;
         fillSample();
         check3(sample);
+        
     }//end main method
     
+    /**
+     * Will take a magic square from user and place it in the inputted array to be checked. 
+     * 
+     */
+    private static void inputHandle(){
+        Scanner scan = new Scanner (System.in);
+        int [] list = new int [9];
+        String derp;
+        int current = 0;
+        int count =0;
+        while (scan.hasNextLine()){
+            count ++;
+            derp=scan.nextLine();
+            current =Integer.parseInt(derp);
+            place(current,count);
+        }
+    }//end method
+    
+    /**
+     * places the  current int into the correct cell in the magic square array.
+     * @param curr
+     * @param cnt 
+     */
+    private static void place(int curr, int cnt){
+        
+    }
     /**
      * check3 will check that a  3 by 3 magic square is 
      * such that it is accurate (ie add required lines add to 15).

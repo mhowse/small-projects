@@ -20,7 +20,8 @@ public class magicSquare {
         boolean right =false;
         fillSample();
         check3(sample);
-        
+        inputHandle();
+        check3(inputted);
     }//end main method
     
     /**
@@ -29,18 +30,16 @@ public class magicSquare {
      */
     private static void inputHandle(){
         Scanner scan = new Scanner (System.in);
-        int [] list = new int [9];
+        int [] list = new int [10];
         System.out.println("Please enter the numbers of your magic square,");
         System.out.print("row by row, seperated by a space.");
         String derp;
         int current;
-        int count =0;
         derp= scan.next(); 
          String[] tokens = derp.split("-");
-        while (count <10){
+      for( int count =0; count <9; count++){
             current =Integer.parseInt(tokens [count]);
             place(current,count);
-            count ++;
         }
         scan.close();
     }//end method

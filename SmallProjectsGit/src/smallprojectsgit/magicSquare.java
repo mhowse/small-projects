@@ -30,15 +30,19 @@ public class magicSquare {
     private static void inputHandle(){
         Scanner scan = new Scanner (System.in);
         int [] list = new int [9];
+        System.out.println("Please enter the numbers of your magic square,");
+        System.out.print("row by row, seperated by a space.");
         String derp;
-        int current = 0;
+        int current;
         int count =0;
-        while (scan.hasNextLine()){
-            count ++;
-            derp=scan.nextLine();
-            current =Integer.parseInt(derp);
+        derp= scan.next(); 
+         String[] tokens = derp.split("-");
+        while (count <10){
+            current =Integer.parseInt(tokens [count]);
             place(current,count);
+            count ++;
         }
+        scan.close();
     }//end method
     
     /**
@@ -47,7 +51,7 @@ public class magicSquare {
      * @param cnt 
      */
     private static void place(int curr, int cnt){
-        
+       
     }
     /**
      * check3 will check that a  3 by 3 magic square is 

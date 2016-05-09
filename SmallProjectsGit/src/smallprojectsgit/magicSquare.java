@@ -29,35 +29,53 @@ public class magicSquare {
      * 
      */
     private static void inputHandle(){
-        Scanner scan = new Scanner (System.in);
-        int [] list = new int [10];
-        System.out.println("Please enter the numbers of your magic square,");
-        System.out.print("row by row, seperated by a space.");
-        String derp;
-        int current;
-        derp= scan.next(); 
-         String[] tokens = derp.split("-");
-      for( int count =0; count <9; count++){
-            current =Integer.parseInt(tokens [count]);
-            place(current,count);
-        }
-        scan.close();
+        try (Scanner scan = new Scanner (System.in)) {
+            int [] list = new int [10];
+            System.out.println("Please enter the numbers of your magic square,");
+            System.out.print("row by row, seperated by a space.");
+            String derp;
+            int current;
+            derp= scan.nextLine();
+            String[] tokens = derp.split(" ");
+            printArray(tokens);
+           if(tokens.length<10){
+            System.out.println("Invalid input, not enough numbers for a 3x3 square.");
+            System.out.println(" please reenter your square.");
+            inputHandle();
+        } 
+           int count=0;
+           for(String t:tokens){
+               current=Integer.parseInt(t);
+               place(current, count);
+               count++;
+           }
+           scan.close();
+    }
+             
+        
     }//end method
     
+      private static void printArray(String [] array){
+          System.out.println("Printing array");
+       for (String array1 : array) {
+           System.out.print(array1 + "\t");
+       }
+  }
     /**
      * places the  current int into the correct cell in the magic square array.
      * @param curr
      * @param cnt 
      */
     private static void place(int curr, int cnt){
-       if(cnt <4){
+       if(cnt <3){
            inputted[cnt][0] = curr;
        } 
-       else if( cnt<7){
+       else if( cnt<6){
            inputted [cnt -3][1] = curr;
        }
        else if( cnt >6){
-           inputted [cnt-6][2]= curr;
+           System.out.println("Count ="+cnt +"Curr="+curr);
+           inputted [cnt-7][2]= curr;
        }
     } 
     

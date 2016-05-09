@@ -37,9 +37,9 @@ public class magicSquare {
             int current;
             derp= scan.nextLine();
             String[] tokens = derp.split(" ");
-            printArray(tokens);
-           if(tokens.length<10){
-            System.out.println("Invalid input, not enough numbers for a 3x3 square.");
+            //printArray(tokens);
+           if(tokens.length!=9){
+            System.out.println("Invalid input, not enough(or too many) numbers for a 3x3 square.");
             System.out.println(" please reenter your square.");
             inputHandle();
         } 
@@ -54,7 +54,10 @@ public class magicSquare {
              
         
     }//end method
-    
+    /**
+     * printArray is a handy method that prints out the contents of a string array. 
+     * @param array 
+     */
       private static void printArray(String [] array){
           System.out.println("Printing array");
        for (String array1 : array) {

@@ -11,6 +11,7 @@ public class EulerProblems {
     public static void main (String [] args){
         problem1();
         problem2();
+        problem2a();
                
     }//end main method
     
@@ -70,5 +71,33 @@ public class EulerProblems {
      current =next; 
     return;
 }
+    /**
+     * A slightly more refined and tidier version of the problem. 
+     */
+    private static void problem2a(){
+        Fibsum=0;
+        current=2;
+         previous=1;
+         next=0;
+        int high =4000000;
+        boolean run =true;
+        while(run){
+           if(current>high){
+               run=false;
+           }
+           next =current+previous;
+           System.out.println("Next ="+next);
+           if(next%2==0){
+               Fibsum+=next;
+           }
+            previous = current; 
+            current =next; 
+           System.out.println("Fibsum="+Fibsum);
+        }
+        System.out.println("Sum ="+Fibsum);
+    } //end method
+    
+    
+   
     
 }//end class

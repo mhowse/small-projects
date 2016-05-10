@@ -6,11 +6,9 @@ package smallprojectsgit.projectEuler;
  */
 
 public class EulerProblems {
-    private static int  Fibsum, current, previous, next;
     
     public static void main (String [] args){
         problem1();
-        problem2();
         problem2a();
                
     }//end main method
@@ -31,68 +29,26 @@ public class EulerProblems {
         System.out.println("Sum ="+sum);
     }
     
-    /**
-     * problem2 
-     * Sum of even Fibonacci numbers that are less then 4 million.
-     * A brute force solution.
-     */
-    private static void problem2(){
-        Fibsum=0;
-        current=2;
-         previous=1;
-         next=0;
-        int high =4000000;
-        boolean run =true;
-        while(run){
-           if(current>high){
-               run=false;
-           }
-           next =fib(current, previous);
-           System.out.println("Next ="+next);
-           if(next%2==0){
-               Fibsum+=next;
-           }
-           Switch(); 
-           System.out.println("Fibsum="+Fibsum);
-        }
-        System.out.println("Sum ="+Fibsum);
-    }
-    /**
-     * fib()
-     * calculates the next Fibonacci number. 
-     */
-    private static int fib(int curr,int prev){
-        System.out.println("total="+(curr+prev));
-        return curr+prev;
-    }
     
-    private static void Switch(){
-     previous = current; 
-     current =next; 
-    return;
-}
     /**
-     * A slightly more refined and tidier version of the problem. 
+     * problem2a
+     * A slightly more refined and tidier version of the problem.
+     * Still somewhat brute forcing it. 
      */
     private static void problem2a(){
-        Fibsum=0;
-        current=2;
-         previous=1;
-         next=0;
+        int Fibsum=0;
+        int current=2;
+         int previous=1;
+         int next=0;
         int high =4000000;
         boolean run =true;
-        while(run){
-           if(current>high){
-               run=false;
-           }
+        while(current <high){
            next =current+previous;
-           System.out.println("Next ="+next);
            if(next%2==0){
                Fibsum+=next;
            }
             previous = current; 
             current =next; 
-           System.out.println("Fibsum="+Fibsum);
         }
         System.out.println("Sum ="+Fibsum);
     } //end method

@@ -1,7 +1,6 @@
 /**
  * usefullCode.java
- * mhowse
- *april 2016
+ * mhowse april 2016
  */
 
 package smallprojectsgit;

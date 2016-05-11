@@ -5,7 +5,9 @@ package smallprojectsgit.projectEuler;
  * mhowse may 2016
  */
 
+import java.util.*;
 public class EulerProblems {
+    
     
     public static void main (String [] args){
         problem1();
@@ -58,18 +60,33 @@ public class EulerProblems {
      * What is the largest prime factor of the number 600851475143 ?
      *  Prime factors of a number  are the prime numbers that divide a number tidily.
      */
-    private static void problem3(){
+    private static void problem3(){ 
         long value =600851475143L; //too big for int. 
-        long prime=1; //prime numbers
+        long prime=2; //prime numbers
         long result =0;
+        for (long i = 2; i <= value; i++) {
+            if(i%2==0){   
+                //if even number, therefore not prime, move to next number. 
+                //this halves pool of numbers, from giant to not so giant. 
+            }else{
+                if(value%i==0){
+                    //if it divides cleanly it is a factor. 
+                    if(isPrime(i)){ //if it is a prime, as well as a factor. 
+                        System.out.println(""+i+"Is a Prime Factor.");
+                    }
+                }               
+            }
         //generate prime number. 
         //value/prime =result;
         //is result>prime? is result a prime? 
-        
-        
-        
+        //if result is a prime, and is larger then prime. 
+       //prime =result. 
+    }
     }
     
+    private static boolean isPrime(long n){
+        return true;
+    }
    
     
 }//end class

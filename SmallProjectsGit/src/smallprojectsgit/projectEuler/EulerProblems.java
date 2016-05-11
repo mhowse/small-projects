@@ -10,6 +10,7 @@ public class EulerProblems {
     public static void main (String [] args){
         problem1();
         problem2a();
+        problem3();
                
     }//end main method
     
@@ -53,6 +54,21 @@ public class EulerProblems {
         System.out.println("Sum ="+Fibsum);
     } //end method
     
+    /**
+     * What is the largest prime factor of the number 600851475143 ?
+     *  Prime factors of a number  are the prime numbers that divide a number tidily.
+     */
+    private static void problem3(){
+        long value =600851475143L; //too big for int. 
+        long prime=1; //prime numbers
+        long result =0;
+        //generate prime number. 
+        //value/prime =result;
+        //is result>prime? is result a prime? 
+        
+        
+        
+    }
     
    
     

@@ -70,9 +70,10 @@ public class EulerProblems {
                 //this halves pool of numbers, from giant to not so giant. 
             }else{
                 if(value%i==0){
+                   // System.out.println("i is"+i+" It cleanly divides value.");
                     //if it divides cleanly it is a factor. 
                     if(isPrime(i)){ //if it is a prime, as well as a factor. 
-                        System.out.println(""+i+"Is a Prime Factor.");
+                        System.out.println(""+i+" Is a Prime Factor.");
                     }
                 }               
             }
@@ -85,8 +86,21 @@ public class EulerProblems {
     }
     
     private static boolean isPrime(long n){
+        if(n==1||n==2){
+            return true;
+        } 
+       // if (n % 2 == 0){  This bit is currently already checked by problem3(), 
+        //return false; so here is commented out in order to make sligtly faster. 
+       // }
+        for (int i = 3; i * i <= n; i += 2){
+            
+            if (n % i == 0){
+                return false;
+            }
         return true;
-    }
+        }
+        return true;
+    } //end isPrime 
    
     
 }//end class

@@ -5,7 +5,11 @@ package smallprojectsgit.projectEuler;
  * mhowse may 2016
  */
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 public class EulerProblems {
     
     
@@ -64,47 +68,37 @@ public class EulerProblems {
         long value =600851475143L; //too big for int. 
         long prime=2; //prime numbers
         long result =0;
-        for (long i = 2; i <= value; i++) {
-            System.out.println("I ="+i);
-            //this is what the problem is, we are iterating through possibly 
-            //as many values as 600851475143 before we even look at their relation to the value. 
-            
-            if(i%2==0){   
-                //if even number, therefore not prime, move to next number. 
-                //this halves pool of numbers, from giant to not so giant. 
-            }else{
-                if(value%i==0){
-                    System.out.println("i is"+i+" It cleanly divides value.");
-                    //if it divides cleanly it is a factor. 
-                    if(isPrime(i)){ //if it is a prime, as well as a factor. 
-                        System.out.println(""+i+" Is a Prime Factor.");
-                    }
-                }               
+        ArrayList<Long> pFactors = new ArrayList<>();
+        String line ="";
+        File file = new File("primes.txt");  //look at list of primes. 
+        Scanner scan; 
+        try {
+            scan = new Scanner(file); // scan them.
+            while (scan.hasNextLine()){
+            line = scan.nextLine(); 
+            String [] tokens = line.split(" ");
+            long [] primenos =new long [tokens.length];
+            for(int i =0; i<tokens.length; i++){
+                primenos[i] = Long.parseLong(tokens[i]);
+            } //convert the input to a long. 
+            for (long l:primenos){ //for each of these prime numbers, 
+                if(value%l==0){ //is it a factor? 
+                pFactors.add(l);//add it to the list of prime factors. 
             }
-        //generate prime number. 
-        //value/prime =result;
-        //is result>prime? is result a prime? 
-        //if result is a prime, and is larger then prime. 
-       //prime =result. 
-    }
-    }
-    
-    private static boolean isPrime(long n){
-        if(n==1||n==2){
-            return true;
-        } 
-       // if (n % 2 == 0){  This bit is currently already checked by problem3(), 
-        //return false; so here is commented out in order to make sligtly faster. 
-       // }
-        for (int i = 3; i * i <= n; i += 2){
-            System.out.println("isPrimeForLoop.");
-            if (n % i == 0){
-                return false;
             }
-        return true;
         }
-        return true;
-    } //end isPrime 
-   
+            System.out.println("From 10000 primes we found "+pFactors.size()+" prime factors.");
+            System.out.println("They are as follows. ");
+            for(long l:pFactors){
+                System.out.println(""+l);
+            }
+            System.out.println("The largest prime Factor of "+value+"is "+pFactors.get(pFactors.size()-1));
+          } catch (FileNotFoundException ex) {
+            Logger.getLogger(EulerProblems.class.getName()).log(Level.SEVERE, null, ex);
+        }
+         
+    }//end method            
+            
+    
     
 }//end class

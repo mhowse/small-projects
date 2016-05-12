@@ -108,21 +108,29 @@ public class EulerProblems {
         int n1=100;
         int n2=100; 
         int high =998001; //999 x999 =998001
-        int half1 =998; 
-        int half2 =001;
+        int half1 =998;
         int test =0; 
         boolean run = true;       
         //3 digit = 100 -999 = 899
         //so counting backwards from  high. only check numbers that have the same last digit as first.
         //100x100 = 10000, 998001-10000 = 988001. 
          while (run){
-             palindromeMake();  // make a palindrome, 
-             
+           test =  palindromeMake(half1);  // make a palindrome, 
+          //find how two 3 digit numbers create it. 
+           
          }
         
     }
-    private static void palindromeMake(){
-        
-    };
+    private static int palindromeMake(int x){
+        String derp = String.valueOf(x); 
+        char [] arr = derp.toCharArray();
+        String Half ="";
+        for(int i=arr.length-1; i>=0; i--){
+            Half+=arr[i];
+        }
+        derp=derp+Half;
+        int ret = Integer.parseInt(derp);
+        return ret;
+    }
     
 }//end class

@@ -105,7 +105,24 @@ public class EulerProblems {
      * palindrome being something that is the same when backwards. 
      */
     private static void problem4(){
+        int n1=100;
+        int n2=100; 
+        int high =998001; //999 x999 =998001
+        int half1 =998; 
+        int half2 =001;
+        int test =0; 
+        boolean run = true;       
+        //3 digit = 100 -999 = 899
+        //so counting backwards from  high. only check numbers that have the same last digit as first.
+        //100x100 = 10000, 998001-10000 = 988001. 
+         while (run){
+             palindromeMake();  // make a palindrome, 
+             
+         }
         
     }
+    private static void palindromeMake(){
+        
+    };
     
 }//end class

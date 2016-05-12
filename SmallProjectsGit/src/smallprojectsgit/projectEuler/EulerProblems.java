@@ -105,10 +105,10 @@ public class EulerProblems {
      * palindrome being something that is the same when backwards. 
      */
     private static void problem4(){
-        int n1=100;
-        int n2=100; 
         int high =998001; //999 x999 =998001
         int half1 =998;
+        int factor1=0;
+        int factor2=0;
         int test =0; 
         boolean run = true;       
         //3 digit = 100 -999 = 899
@@ -117,9 +117,20 @@ public class EulerProblems {
          while (run){
            test =  palindromeMake(half1);  // make a palindrome, 
           //find how two 3 digit numbers create it. 
-           
-         }
-        
+           for(int i=999; i>99; i--){ // at most 800 checks here of each palindrome; 
+               if(((test/i)>99) && ((test/i)<1000)){ //if i and something between 99 and 999 makes test
+                  factor1=i;
+                   break;
+               }
+           }
+           checkFactors();
+           half1--;
+         } //end while
+        System.out.println("Palindrome "+test+"is the product of "+factor1+ "and ");
+    } //end method
+    
+    private static int checkFactors(){
+        return 0;
     }
     private static int palindromeMake(int x){
         String derp = String.valueOf(x); 

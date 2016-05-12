@@ -17,6 +17,7 @@ public class EulerProblems {
         problem1();
         problem2a();
         problem3();
+        problem4();
                
     }//end main method
     
@@ -98,7 +99,13 @@ public class EulerProblems {
         }
          
     }//end method            
-            
-    
+     
+    /**
+     * problem4 finds the largest palindrome made from the product of 2 3-digit numbers. 
+     * palindrome being something that is the same when backwards. 
+     */
+    private static void problem4(){
+        
+    }
     
 }//end class

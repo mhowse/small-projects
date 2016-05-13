@@ -14,9 +14,9 @@ public class EulerProblems {
     
     
     public static void main (String [] args){
-        problem1();
-        problem2a();
-        problem3();
+        //problem1();
+        //problem2a();
+       // problem3();
         problem4();
                
     }//end main method
@@ -129,7 +129,7 @@ public class EulerProblems {
                run = false;
            }
          } //end while
-        System.out.println("Palindrome "+test+"is the product of "+factor1+ "and ");
+        System.out.println("Palindrome "+test+"is the product of "+factor1+ "and "+factor2);
     } //end method
     
     private static int checkFactors(int x, int pal){

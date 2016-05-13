@@ -123,15 +123,21 @@ public class EulerProblems {
                    break;
                }
            }
-           checkFactors();
+           factor2 =checkFactors(factor1, test);
            half1--;
+           if(factor2 != 0){
+               run = false;
+           }
          } //end while
         System.out.println("Palindrome "+test+"is the product of "+factor1+ "and ");
     } //end method
     
-    private static int checkFactors(){
-        return 0;
+    private static int checkFactors(int x, int pal){
+        int f2 =pal/x;
+        System.out.println("Factor 2 is " +f2 );
+        return f2;
     }
+    
     private static int palindromeMake(int x){
         String derp = String.valueOf(x); 
         char [] arr = derp.toCharArray();

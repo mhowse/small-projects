@@ -106,6 +106,7 @@ public class EulerProblems {
      */
     private static void problem4(){
         int high =998001; //999 x999 =998001
+        int low = 10000; //100*100=10000
         int half1 =998;
         int factor1=0;
         int factor2=0;
@@ -114,22 +115,27 @@ public class EulerProblems {
         //3 digit = 100 -999 = 899
         //so counting backwards from  high. only check numbers that have the same last digit as first.
         //100x100 = 10000, 998001-10000 = 988001. 
+        System.out.println("high = "+high);
          while (run){
            test =  palindromeMake(half1);  // make a palindrome, 
            System.out.println("Test palindrome = "+test);
           //find how two 3 digit numbers create it. 
-           
+           if(test<high &&test>low){
            for(int i=999; i>99; i--){ // at most 800 checks here of each palindrome; 
                if(((test/i)>99) && ((test/i)<1000)){ //if i and something between 99 and 999 makes test
-                  factor1=i;
+               if(test%i ==0){
+                   factor1=i;
                    break;
                }
+               }
            }
+           if(factor1 !=0){
            factor2 =checkFactors(factor1, test);
            
            System.out.println("factor1= "+factor1+" factor2 ="+factor2);
-           
+           }
            if((factor1*factor2)== test){
+               System.out.println("going through conditions.");
              if(test<high){ //if the palindrome is smaller then the high
                  if(factor1+factor2<1998){ //if the two factors are not both 999
                      System.out.println("Conditions have been meet"); 
@@ -137,7 +143,11 @@ public class EulerProblems {
                  }
              }
            }
-           
+           } 
+           else{
+               System.out.println("test Palindrome higher then, or lower then, limit.");
+           }
+           half1--;
          } //end while
         System.out.println("Palindrome "+test+"is the product of "+factor1+ "and "+factor2);
     } //end method

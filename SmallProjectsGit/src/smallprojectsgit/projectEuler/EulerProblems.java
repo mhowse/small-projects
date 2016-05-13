@@ -116,7 +116,9 @@ public class EulerProblems {
         //100x100 = 10000, 998001-10000 = 988001. 
          while (run){
            test =  palindromeMake(half1);  // make a palindrome, 
+           System.out.println("Test palindrome = "+test);
           //find how two 3 digit numbers create it. 
+           
            for(int i=999; i>99; i--){ // at most 800 checks here of each palindrome; 
                if(((test/i)>99) && ((test/i)<1000)){ //if i and something between 99 and 999 makes test
                   factor1=i;
@@ -124,10 +126,18 @@ public class EulerProblems {
                }
            }
            factor2 =checkFactors(factor1, test);
-           half1--;
-           if(factor2 != 0){
-               run = false;
+           
+           System.out.println("factor1= "+factor1+" factor2 ="+factor2);
+           
+           if((factor1*factor2)== test){
+             if(test<high){ //if the palindrome is smaller then the high
+                 if(factor1+factor2<1998){ //if the two factors are not both 999
+                     System.out.println("Conditions have been meet"); 
+                     run =false;
+                 }
+             }
            }
+           
          } //end while
         System.out.println("Palindrome "+test+"is the product of "+factor1+ "and "+factor2);
     } //end method

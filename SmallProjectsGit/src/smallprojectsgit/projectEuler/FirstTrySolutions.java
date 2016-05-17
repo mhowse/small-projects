@@ -134,4 +134,33 @@ public class FirstTrySolutions{
         int ret = Integer.parseInt(derp);
         return ret;
     }
+    
+     private static void problem5(){
+         
+         int n=20; ///the number to be checked. 
+         boolean found =false; 
+         while(!found){
+           if(conditionsmeet(n)){
+               found =true;
+               System.out.println("The number is "+n);
+           }
+             n+=20;//start at 20 and increment in 20s means never have to check 20, 
+             //already know it is divisiable nicely. if it can be divided by 20, it is even, 
+             //so dont need to check 2, or 10, or 4 or 5.
+         }
+     }
+    
+     private static boolean conditionsmeet(int x){
+         if(  x %19 != 0 || x %18 != 0 || x%17 != 0 || x%16 != 0 ){
+             return false;
+         }
+         if(x %15!=0|| x%14!=0 || x%13!=0|| x%12!=0|| x%11!=0){
+              return false;
+         }
+         if( x%9!=0 || x%8!=0 || x%7!=0 || x%6!=0 ||x%3!=0){
+              return false;
+           
+         }
+         return true; 
+     }
 }

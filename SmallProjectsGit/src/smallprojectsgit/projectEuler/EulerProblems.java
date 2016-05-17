@@ -168,14 +168,19 @@ public class EulerProblems {
      * by all of the numbers from 1 to 20?
      */
     private static void problem5(){
-        int n=20; ///the number to be checked. 
+        int x=20; ///the number to be checked. 
         boolean found =false; 
         while(!found){
-          if(conditionsmeet(n)){
-              found =true;
-              System.out.println("The number is "+n);
-          }
-            n+=20;//start at 20 and increment in 20s means never have to check 20, 
+            if(  x %19 == 0 && x %18 == 0 && x%17 == 0 && x%16 == 0 ){
+                if(x %15==0&& x%14==0 && x%13==0&&  x%12==0&& x%11==0){
+                    if( x%9==0 &&x%7==0 && x%6==0 &&x%3==0){
+                        System.out.println("The number is "+x);
+                        found =true;
+                    }
+                }
+            }
+               
+            x+=20;//start at 20 and increment in 20s means never have to check 20, 
             //already know it is divisiable nicely. if it can be divided by 20, it is even, 
             //so dont need to check 2, or 10, or 4 or 5. 
             //Because 8 is just 2*4 we dont need to check it. 
@@ -184,18 +189,4 @@ public class EulerProblems {
         }
     }
    
-    private static boolean conditionsmeet(int x){
-        
-        
-        if(  x %19 == 0 && x %18 == 0 && x%17 == 0 && x%16 == 0 ){
-         if(x %15==0&& x%14==0 && x%13==0&& x%12==0&& x%11==0){
-             
-         if( x%9==0 && x%8==0 &&x%7==0 && x%6==0 &&x%3==0){
-              return true;
-         }
-         }
-         }
-         return false; 
-     }
-    
 }//end class

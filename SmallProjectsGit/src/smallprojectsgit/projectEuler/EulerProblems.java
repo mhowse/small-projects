@@ -117,7 +117,15 @@ public class EulerProblems {
         //100x100 = 10000, 998001-10000 = 988001. 
         System.out.println("high = "+high);
          while (run){
-           test =  palindromeMake(half1);  // make a palindrome, 
+         String derp = String.valueOf(half1); 
+        char [] arr = derp.toCharArray();
+        String Half ="";
+        for(int i=arr.length-1; i>=0; i--){
+            Half+=arr[i];
+        }
+        derp=derp+Half;
+        test = Integer.parseInt(derp);
+      
            System.out.println("Test palindrome = "+test);
           //find how two 3 digit numbers create it. 
            if(test<high &&test>low){
@@ -152,17 +160,6 @@ public class EulerProblems {
         System.out.println("Palindrome "+test+"is the product of "+factor1+ "and "+factor2);
     } //end method
     
-    
-    private static int palindromeMake(int x){
-        String derp = String.valueOf(x); 
-        char [] arr = derp.toCharArray();
-        String Half ="";
-        for(int i=arr.length-1; i>=0; i--){
-            Half+=arr[i];
-        }
-        derp=derp+Half;
-        int ret = Integer.parseInt(derp);
-        return ret;
-    }
+   
     
 }//end class

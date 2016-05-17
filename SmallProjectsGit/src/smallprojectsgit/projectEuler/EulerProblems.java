@@ -70,7 +70,7 @@ public class EulerProblems {
         long prime=2; //prime numbers
         long result =0;
         ArrayList<Long> pFactors = new ArrayList<>();
-        String line ="";
+        String line;
         File file = new File("primes.txt");  //look at list of primes. 
         Scanner scan; 
         try {

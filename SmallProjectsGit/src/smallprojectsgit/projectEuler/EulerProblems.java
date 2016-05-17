@@ -17,7 +17,8 @@ public class EulerProblems {
         //problem1();
         //problem2a();
        // problem3();
-        problem4();
+        //problem4();
+        problem5();
                
     }//end main method
     
@@ -160,6 +161,15 @@ public class EulerProblems {
         System.out.println("Palindrome "+test+"is the product of "+factor1+ "and "+factor2);
     } //end method
     
+    /**
+     * 2520 is the smallest number that can be divided by each of the numbers 
+     * from 1 to 10 without any remainder.
+     *What is the smallest positive number that is evenly divisible 
+     * by all of the numbers from 1 to 20?
+     */
+    private static void problem5(){
+        
+    }
    
     
 }//end class

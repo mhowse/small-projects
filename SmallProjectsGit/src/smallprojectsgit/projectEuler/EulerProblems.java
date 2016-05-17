@@ -130,7 +130,7 @@ public class EulerProblems {
                }
            }
            if(factor1 !=0){
-           factor2 =checkFactors(factor1, test);
+           factor2 =test/factor1;
            
            System.out.println("factor1= "+factor1+" factor2 ="+factor2);
            }
@@ -152,11 +152,6 @@ public class EulerProblems {
         System.out.println("Palindrome "+test+"is the product of "+factor1+ "and "+factor2);
     } //end method
     
-    private static int checkFactors(int x, int pal){
-        int f2 =pal/x;
-        System.out.println("Factor 2 is " +f2 );
-        return f2;
-    }
     
     private static int palindromeMake(int x){
         String derp = String.valueOf(x); 

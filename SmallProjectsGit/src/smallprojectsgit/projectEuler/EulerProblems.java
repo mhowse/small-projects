@@ -18,8 +18,8 @@ public class EulerProblems {
         //problem2a();
        // problem3();
         //problem4();
-        problem5();
-               
+        //problem5();
+          problem6();     
     }//end main method
     
     /**
@@ -172,7 +172,7 @@ public class EulerProblems {
         boolean found =false; 
         while(!found){
             if(  x %19 == 0 && x %18 == 0 && x%17 == 0 && x%16 == 0 ){
-                if(x %15==0&&/* x%14==0 &&*/ x%13==0&& x%11==0){
+                if(x %15==0&& x%13==0&& x%11==0){
                     if( x%9==0 &&x%7==0 && x%6==0 &&x%3==0){
                         System.out.println("The number is "+x);
                         found =true;
@@ -183,10 +183,19 @@ public class EulerProblems {
             x+=20;//start at 20 and increment in 20s means never have to check 20, 
             //already know it is divisiable nicely. if it can be divided by 20, it is even, 
             //so dont need to check 2, or 10, or 4 or 5. 
-            //Because 8 is just 2*4 we dont need to check it, or 12,  
-            //,14,16,and 18 are dividable by 2, so we can theoretically could remove them.
-            //but 3 doesn't play nicely. 
+            //Because 8 is just 2*4 we dont need to check it, or 12, or 14 
+            //16,and 18 are dividable by 2, so we can theoretically could remove them.
+            //but experiance doesn't agree.  
         }
+    }
+    
+    /**
+     * problem6
+     * Find the difference between the sum of the squares 
+     * of the first one hundred natural numbers and the square of the sum.
+     */
+    private static void problem6(){
+        
     }
    
 }//end class

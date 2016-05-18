@@ -207,7 +207,8 @@ public class EulerProblems {
         }
         int squaredSum =sum*sum;
         System.out.println("Squared sum ="+squaredSum);
-        System.out.println("Sum of Squares ="+sumOfSquares);
+        System.out.println("Sum of Squares = "+sumOfSquares);
+        System.out.println("Difference is "+(squaredSum-sumOfSquares));
     }
    
 }//end class

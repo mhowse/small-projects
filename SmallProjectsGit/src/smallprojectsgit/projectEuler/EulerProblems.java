@@ -195,7 +195,19 @@ public class EulerProblems {
      * of the first one hundred natural numbers and the square of the sum.
      */
     private static void problem6(){
-        
+        int n =100; 
+        int sum =0; 
+        int [] squares =new int [100];
+        int sumOfSquares=0;
+        int differnce;
+        for(int i =1; i<101; i++){
+            sum=sum+i;
+            squares[i-1]=(i*i); 
+            sumOfSquares= sumOfSquares +squares[i-1];
+        }
+        int squaredSum =sum*sum;
+        System.out.println("Squared sum ="+squaredSum);
+        System.out.println("Sum of Squares ="+sumOfSquares);
     }
    
 }//end class

@@ -19,7 +19,8 @@ public class EulerProblems {
        // problem3();
         //problem4();
         //problem5();
-          problem6();     
+         // problem6(); 
+        problem7();
     }//end main method
     
     /**
@@ -211,4 +212,11 @@ public class EulerProblems {
         System.out.println("Difference is "+(squaredSum-sumOfSquares));
     }
    
+    /**
+     * problem7
+     * what is the 10 001st prime number?
+     */
+    private static void problem7(){
+        
+    }
 }//end class

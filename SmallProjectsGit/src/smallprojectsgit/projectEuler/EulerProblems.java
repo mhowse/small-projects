@@ -217,6 +217,26 @@ public class EulerProblems {
      * what is the 10 001st prime number?
      */
     private static void problem7(){
+        int n=0; 
+        int primeCount=0;
+        boolean found = false;
+        while(!found){
+            if(n%2 !=0){
+                if(isPrime(n)){
+                primeCount++;    
+                if(primeCount==10001){
+                    System.out.println("the 10001 prime is "+n);
+                    return;
+                }
+            }
+            }
+            n++;
+            
+        }
+    }
+    
         
+    private static boolean isPrime(int num){
+        return true;
     }
 }//end class

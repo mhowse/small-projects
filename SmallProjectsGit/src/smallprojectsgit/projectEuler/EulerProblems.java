@@ -218,7 +218,7 @@ public class EulerProblems {
      */
     private static void problem7(){
         int n=1; 
-        int primeCount=0;
+        int primeCount=1;
         boolean found = false;
         while(!found){
             if(n%2 !=0){

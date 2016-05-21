@@ -163,4 +163,36 @@ public class FirstTrySolutions{
          }
          return true; 
      }
+     /**
+     * problem7
+     * what is the 10 001st prime number?
+     */
+    private static void problem7(){
+        int n=1; 
+        int primeCount=1;
+        boolean found = false;
+        while(!found){
+            if(n%2 !=0){
+                if(isPrime(n)){
+                primeCount++;    
+                if(primeCount==10001){
+                    System.out.println("the 10001 prime is "+n);
+                    return;
+                }
+            }
+            }
+            n++;
+            
+        }
+    }
+    
+        
+    private static boolean isPrime(int num){
+          if (num < 2) return false;
+        if (num == 2) return true;
+        if (num % 2 == 0) return false;
+        for (int i = 3; i * i <= num; i += 2)
+            if (num % i == 0) return false;
+        return true;
+}
 }

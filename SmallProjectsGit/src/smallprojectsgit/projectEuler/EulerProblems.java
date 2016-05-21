@@ -217,7 +217,7 @@ public class EulerProblems {
      * what is the 10 001st prime number?
      */
     private static void problem7(){
-        int n=0; 
+        int n=1; 
         int primeCount=0;
         boolean found = false;
         while(!found){

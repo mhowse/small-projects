@@ -20,7 +20,8 @@ public class EulerProblems {
         //problem4();
         //problem5();
          // problem6(); 
-        problem7();
+        //problem7();
+        problem8();
     }//end main method
     
     /**
@@ -242,7 +243,13 @@ public class EulerProblems {
         }
         }
     
-    
+    /**
+     * problem8()
+     * 
+     */
+    private static void problem8(){
+        
+    }
         
     
 }//end class

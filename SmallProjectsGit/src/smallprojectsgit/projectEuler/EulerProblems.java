@@ -279,6 +279,7 @@ public class EulerProblems {
            for(int ind=0; ind<13; ind++){
                System.out.print(arr[ind]);
            }
+           return; 
        } //end if greatest product found. 
        if( product.compareTo(currentProduct) == 1){
            currentProduct=product;
@@ -286,7 +287,15 @@ public class EulerProblems {
        }
        //
     }
-    //
+    //if the whole thing is iterated through without finding the greatest product sequence,
+    //then the greatest sequence in the section is what is stored as greatestProduct and currSequence. 
+    System.out.println("Greatest product in number is "+currentProduct);
+           System.out.println("Sequence is ");
+           for(int ind=0; ind<13; ind++){
+               System.out.print(currSequence[ind]);
+           }
+           return;
+    
     }
         
     

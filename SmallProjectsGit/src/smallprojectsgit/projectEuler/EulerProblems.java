@@ -262,6 +262,10 @@ public class EulerProblems {
     9*9*8*9*9  *8*9*9*8*9 *9*8*9 as that allows for no sets of four nines. 
     This has a product of 1.5868743e+12
     */
+    
+    // So one can iterate through the digits. 
+    String SourceStr = source.toString();
+    char[] SourceArray = SourceStr.toCharArray();
     int thou =1000;//for the length of the Biginteger;
     BigInteger greatestProduct= new BigInteger("1586874300000");
     BigInteger currentProduct=new BigInteger("0");//for the largest product found so far. 
@@ -308,7 +312,7 @@ public class EulerProblems {
          */
     private static int [] shiftDown(int [] array){
      int[] newArr = new int[13];
-     for(int i=0; i<12; i++){
+     for(int i=0; i<11; i++){
          newArr[i]= array[i+1];
      }
      newArr[12]=0;

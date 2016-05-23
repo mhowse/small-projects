@@ -306,8 +306,12 @@ public class EulerProblems {
          * returns the new array. 
          * @param array 
          */
-    private static int [] shiftDown(int array){
+    private static int [] shiftDown(int [] array){
      int[] newArr = new int[13];
+     for(int i=0; i<12; i++){
+         newArr[i]= array[i+1];
+     }
+     newArr[12]=0;
      return newArr;
     }
     

@@ -269,6 +269,10 @@ public class EulerProblems {
     int [] currSequence=new int [13]; //for the current largest sequence. 
     for(int i =0; i<thou; i++){ //iterating through the number. 
         //shift what is in the 13 digit array, removing the first one, 
+        if(i==13){//at the begining fill  the array. 
+           
+        }
+        arr= shiftDown(arr);
         //add the new arr[12] digit, 
         //check the product. 
        if(product.equals(greatestProduct)){
@@ -297,6 +301,14 @@ public class EulerProblems {
            return;
     
     }
-        
+        /**
+         * For shifting the values down the array. 
+         * returns the new array. 
+         * @param array 
+         */
+    private static int [] shiftDown(int array){
+     int[] newArr = new int[13];
+     return newArr;
+    }
     
 }//end class

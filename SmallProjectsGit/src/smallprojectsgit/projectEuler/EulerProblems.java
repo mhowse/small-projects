@@ -271,13 +271,16 @@ public class EulerProblems {
     BigInteger currentProduct=new BigInteger("0");//for the largest product found so far. 
     BigInteger product =new BigInteger("0"); //for the product of each iteration.
     int [] currSequence=new int [13]; //for the current largest sequence. 
-    for(int i =0; i<thou; i++){ //iterating through the number. 
+    for(int i =12; i<thou; i++){ //iterating through the number. 
         //shift what is in the 13 digit array, removing the first one, 
-        if(i==13){//at the begining fill  the array. 
-           
-        }
-        arr= shiftDown(arr);
-        //add the new arr[12] digit, 
+        if(i==12){//at the begining fill  the array. 
+          for(int ind =0; ind<12; ind++){
+              arr[ind]=SourceArray[ind];
+          } 
+        } else{ //otherwise set arr to where it should be for this iteration
+        arr= shiftDown(arr); //shift the values,
+        arr[12]=SourceArray[i];//add the new digit.
+                }
         //check the product. 
        if(product.equals(greatestProduct)){
            System.out.println("Greatest product found.");

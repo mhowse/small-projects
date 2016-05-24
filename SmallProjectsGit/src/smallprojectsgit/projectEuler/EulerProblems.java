@@ -294,10 +294,8 @@ public class EulerProblems {
        } //end if greatest product found. 
        if( product.compareTo(currentProduct) == 1){
            currentProduct=product;
-           //copy arr into currSequence.
-           for(int index =0; index<13; index++){
-               currSequence[index]=arr[index];
-           }
+            //copy arr into currSequence.
+            System.arraycopy(arr, 0, currSequence, 0, 13);
        }
        //
     }

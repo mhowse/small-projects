@@ -274,7 +274,7 @@ public class EulerProblems {
     for(int i =12; i<thou; i++){ //iterating through the number. 
         //shift what is in the 13 digit array, removing the first one, 
         if(i==12){//at the begining fill  the array. 
-          for(int ind =0; ind<12; ind++){
+          for(int ind =0; ind<13; ind++){
               arr[ind]=SourceArray[ind];
           } 
         } else{ //otherwise set arr to where it should be for this iteration
@@ -295,6 +295,9 @@ public class EulerProblems {
        if( product.compareTo(currentProduct) == 1){
            currentProduct=product;
            //copy arr into currSequence.
+           for(int index =0; index<13; index++){
+               currSequence[index]=arr[index];
+           }
        }
        //
     }

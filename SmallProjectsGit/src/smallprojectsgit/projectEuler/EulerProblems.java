@@ -275,11 +275,11 @@ public class EulerProblems {
         //shift what is in the 13 digit array, removing the first one, 
         if(i==12){//at the begining fill  the array. 
           for(int ind =0; ind<13; ind++){
-              arr[ind]=SourceArray[ind];
+              arr[ind]=Character.getNumericValue(SourceArray[ind]);
           } 
         } else{ //otherwise set arr to where it should be for this iteration
         arr= shiftDown(arr); //shift the values,
-        arr[12]=SourceArray[i];//add the new digit.
+        arr[12]=Character.getNumericValue(SourceArray[i]);//add the new digit.
                 }
         //check the product. 
        //collect the product from the array arr. 

@@ -289,6 +289,7 @@ public class EulerProblems {
             }else 
                 product =product.multiply(BigInteger.valueOf(arr[o]));
         }
+        
        if(product.equals(greatestProduct)){
            System.out.println("Greatest product found.");
            System.out.println("Product is " +product);
@@ -297,7 +298,6 @@ public class EulerProblems {
            for(int ind=0; ind<13; ind++){
                System.out.print(arr[ind]);
            }
-           return; 
        } //end if greatest product found. 
        if( product.compareTo(currentProduct) == 1){
            currentProduct=product;

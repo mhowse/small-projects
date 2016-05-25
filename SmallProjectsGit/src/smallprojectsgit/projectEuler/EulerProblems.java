@@ -282,6 +282,13 @@ public class EulerProblems {
         arr[12]=SourceArray[i];//add the new digit.
                 }
         //check the product. 
+       //collect the product from the array arr. 
+        for(int o: arr){
+            if(o==0){
+            product=BigInteger.valueOf(arr[o]);
+            }else 
+                product =product.multiply(BigInteger.valueOf(arr[o]));
+        }
        if(product.equals(greatestProduct)){
            System.out.println("Greatest product found.");
            System.out.println("Product is " +product);

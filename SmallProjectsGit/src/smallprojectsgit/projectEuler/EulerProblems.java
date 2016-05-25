@@ -283,7 +283,7 @@ public class EulerProblems {
                 }
         //check the product. 
        //collect the product from the array arr. 
-        for(int o: arr){
+        for(int o=0; o<arr.length; o++){
             if(o==0){
             product=BigInteger.valueOf(arr[o]);
             }else 

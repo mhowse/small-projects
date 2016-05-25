@@ -271,6 +271,8 @@ public class EulerProblems {
     BigInteger currentProduct=new BigInteger("0");//for the largest product found so far. 
     BigInteger product =new BigInteger("0"); //for the product of each iteration.
     int [] currSequence=new int [13]; //for the current largest sequence. 
+    //1000-12= 988. 
+    int runCount=0;
     for(int i =12; i<thou; i++){ //iterating through the number. 
         //shift what is in the 13 digit array, removing the first one, 
         if(i==12){//at the begining fill  the array. 
@@ -281,6 +283,7 @@ public class EulerProblems {
         arr= shiftDown(arr); //shift the values,
         arr[12]=Character.getNumericValue(SourceArray[i]);//add the new digit.
                 }
+        
         //check the product. 
        //collect the product from the array arr. 
         for(int o=0; o<arr.length; o++){
@@ -289,7 +292,7 @@ public class EulerProblems {
             }else 
                 product =product.multiply(BigInteger.valueOf(arr[o]));
         }
-        
+        System.out.println("Product = "+product);
        if(product.equals(greatestProduct)){
            System.out.println("Greatest product found.");
            System.out.println("Product is " +product);
@@ -300,11 +303,14 @@ public class EulerProblems {
            }
        } //end if greatest product found. 
        if( product.compareTo(currentProduct) == 1){
+           System.out.println("bigger product found");
            currentProduct=product;
             //copy arr into currSequence.
             System.arraycopy(arr, 0, currSequence, 0, 13);
        }
-       //
+       runCount++;
+       System.out.println("arr =");
+       printArray(arr);
     }
     //if the whole thing is iterated through without finding the greatest product sequence,
     //then the greatest sequence in the section is what is stored as greatestProduct and currSequence. 
@@ -313,6 +319,7 @@ public class EulerProblems {
            for(int ind=0; ind<13; ind++){
                System.out.print(currSequence[ind]);
            }
+           System.out.println("Runcount = "+runCount );
            return;
     
     }
@@ -322,12 +329,21 @@ public class EulerProblems {
          * @param array 
          */
     private static int [] shiftDown(int [] array){
+        
+        System.out.println("Shifting down");
      int[] newArr = new int[13];
-     for(int i=0; i<11; i++){
+     for(int i=0; i<12; i++){
          newArr[i]= array[i+1];
      }
      newArr[12]=0;
+     printArray(newArr);
      return newArr;
     }
+    
+    private static void printArray(int [] array){
+       for (int n : array) {
+           System.out.print(n + "\t");
+       }
+  }
     
 }//end class

@@ -1,5 +1,7 @@
 package smallprojectsgit.projectEuler;
 
+import java.math.BigInteger;
+
 /**
  * FirstTrySolutions.java
  * mhowse may 2016
@@ -195,4 +197,107 @@ public class FirstTrySolutions{
             if (num % i == 0) return false;
         return true;
 }
+     
+    /**
+     * problem8()
+     * The four adjacent digits in the 1000-digit number 
+     * that have the greatest product are 9 × 9 × 8 × 9 = 5832.
+     * Find the thirteen adjacent digits in the 1000-digit 
+     * number that have the greatest product. What is the value of this product?
+     */
+    private static void problem8(){
+        BigInteger  source;
+        source = new BigInteger("7316717653133062491922511967442657474235534919493496983520312774506326239578318016984801869478851843858615607891129494954595017379583319528532088055111254069874715852386305071569329096329522744304355766896648950445244523161731856403098711121722383113622298934233803081353362766142828064444866452387493035890729629049156044077239071381051585930796086670172427121883998797908792274921901699720888093776657273330010533678812202354218097512545405947522435258490771167055601360483958644670632441572215539753697817977846174064955149290862569321978468622482839722413756570560574902614079729686524145351004748216637048440319989000889524345065854122758866688116427171479924442928230863465674813919123162824586178664583591245665294765456828489128831426076900422421902267105562632111110937054421750694165896040807198403850962455444362981230987879927244284909188845801561660979191338754992005240636899125607176060588611646710940507754100225698315520005593572972571636269561882670428252483600823257530420752963450");
+    int [] arr = new int [13];
+    /* the largest posible product of 13 numbers would be if all 13 numbers were 9, 
+    the product would be 2.5418658e+12.
+    however since the 4 greatest adjacent didgets are 9 9 8 9
+    the greatest 13 digit selection would be 
+    9*9*8*9*9  *8*9*9*8*9 *9*8*9 as that allows for no sets of four nines. 
+    This has a product of 1.5868743e+12
+    */
+    
+    // So one can iterate through the digits. 
+    String SourceStr = source.toString();
+    char[] SourceArray = SourceStr.toCharArray();
+    int thou =1000;//for the length of the Biginteger;
+    BigInteger greatestProduct= new BigInteger("1586874300000");
+    BigInteger currentProduct=new BigInteger("0");//for the largest product found so far. 
+    BigInteger product =new BigInteger("0"); //for the product of each iteration.
+    int [] currSequence=new int [13]; //for the current largest sequence. 
+    //1000-12= 988. 
+    int runCount=0;
+    for(int i =12; i<thou; i++){ //iterating through the number. 
+        //shift what is in the 13 digit array, removing the first one, 
+        if(i==12){//at the begining fill  the array. 
+          for(int ind =0; ind<13; ind++){
+              arr[ind]=Character.getNumericValue(SourceArray[ind]);
+          } 
+        } else{ //otherwise set arr to where it should be for this iteration
+        arr= shiftDown(arr); //shift the values,
+        arr[12]=Character.getNumericValue(SourceArray[i]);//add the new digit.
+                }
+        
+        //check the product. 
+       //collect the product from the array arr. 
+        for(int o=0; o<arr.length; o++){
+            if(o==0){
+            product=BigInteger.valueOf(arr[o]);
+            }else 
+                product =product.multiply(BigInteger.valueOf(arr[o]));
+        }
+        System.out.println("Product = "+product);
+       if(product.equals(greatestProduct)){
+           System.out.println("Greatest product found.");
+           System.out.println("Product is " +product);
+           System.out.println("Greatest product is "+greatestProduct);
+           System.out.println("Sequence is ");
+           for(int ind=0; ind<13; ind++){
+               System.out.print(arr[ind]);
+           }
+       } //end if greatest product found. 
+       if( product.compareTo(currentProduct) == 1){
+           System.out.println("bigger product found");
+           currentProduct=product;
+            //copy arr into currSequence.
+            System.arraycopy(arr, 0, currSequence, 0, 13);
+       }
+       runCount++;
+       System.out.println("arr =");
+       printArray(arr);
+    }
+    //if the whole thing is iterated through without finding the greatest product sequence,
+    //then the greatest sequence in the section is what is stored as greatestProduct and currSequence. 
+    System.out.println("Greatest product in number is "+currentProduct);
+           System.out.println("Sequence is ");
+           for(int ind=0; ind<13; ind++){
+               System.out.print(currSequence[ind]);
+           }
+           System.out.println("Runcount = "+runCount );
+           return;
+    
+    }
+        /**
+         * For shifting the values down the array. 
+         * returns the new array. 
+         * @param array 
+         */
+    private static int [] shiftDown(int [] array){
+        
+        System.out.println("Shifting down");
+     int[] newArr = new int[13];
+     for(int i=0; i<12; i++){
+         newArr[i]= array[i+1];
+     }
+     newArr[12]=0;
+     printArray(newArr);
+     return newArr;
+    }
+    
+    private static void printArray(int [] array){
+       for (int n : array) {
+           System.out.print(n + "\t");
+       }
+  }
+    
 }

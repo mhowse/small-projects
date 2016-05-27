@@ -327,7 +327,27 @@ public class EulerProblems {
      * There exists exactly one Pythagorean triplet for which a + b + c = 1000.
      */
     private static void problem9(){
-        
+        int a,b,c;
+        a=1;
+        b=1;
+        //a2+b2=c2..  so c should be probably more then 500 (1/2 of 1000)
+        for(int i=0; i<1000; i++){ //c
+            c=i;
+            a++;
+            b++;
+            System.out.print("a = "+a);
+            System.out.print("b = "+b);
+            System.out.print("c = "+c);
+            System.out.println("total = "+(a+b+c));
+        if(a+b+c==1000){
+            if(((a*a)+(b*b))==(c*c)){
+                System.out.print("a = "+a);
+                System.out.print("b = "+b);
+                System.out.print("c = "+c);
+            }
+            
+        }
+        }
         
     }
 }//end class

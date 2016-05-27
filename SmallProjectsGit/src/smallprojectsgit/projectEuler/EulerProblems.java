@@ -328,22 +328,32 @@ public class EulerProblems {
      */
     private static void problem9(){
         int a,b,c;
-        a=1;
+        a=0;
         b=1;
+        int total =0;
+        int high =1000;
         //a2+b2=c2..  so c should be probably more then 500 (1/2 of 1000)
         for(int i=0; i<1000; i++){ //c
             c=i;
             a++;
             b++;
+            
+            total =a+b+c;
+            if(total>high){
+                System.out.println("Gone too far, not found");
+                return;
+            }
             System.out.print("a = "+a);
             System.out.print("b = "+b);
             System.out.print("c = "+c);
             System.out.println("total = "+(a+b+c));
+            
         if(a+b+c==1000){
             if(((a*a)+(b*b))==(c*c)){
                 System.out.print("a = "+a);
                 System.out.print("b = "+b);
                 System.out.print("c = "+c);
+                return;
             }
             
         }

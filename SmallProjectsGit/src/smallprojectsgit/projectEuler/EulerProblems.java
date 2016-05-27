@@ -277,7 +277,13 @@ public class EulerProblems {
                      arr[ind]=Character.getNumericValue(SourceArray[ind]);
                  }
              } else{ //otherwise set arr to where it should be for this iteration
-                 arr= shiftDown(arr); //shift the values,
+                  int[] newArr = new int[13];
+                  for(int ix=0; ix<12; ix++){
+                      newArr[ix]= arr[ix+1];
+                  }
+                  newArr[12]=0;
+                  arr= newArr;
+                // arr= shiftDown(arr); //shift the values,
                   arr[12]=Character.getNumericValue(SourceArray[i]);//add the new digit.
                 } 
        //collect the product from the array arr. 
@@ -306,28 +312,15 @@ public class EulerProblems {
     }
     //if the whole thing is iterated through without finding the greatest product sequence,
     //then the greatest sequence in the section is what is stored as greatestProduct and currSequence. 
-    System.out.println("Greatest product in number is "+currentProduct);
-           System.out.println("Sequence is ");
-           for(int ind=0; ind<13; ind++){
-               System.out.print(currSequence[ind]);
-           }
-           System.out.println("Runcount = "+runCount );
-           return;
+        System.out.println("Greatest product in number is "+currentProduct);
+        System.out.println("Sequence is ");
+        for(int ind=0; ind<13; ind++){
+            System.out.print(currSequence[ind]);
+        }
+        System.out.println("Runcount = "+runCount );
+        return;
     
     }
-        /**
-         * For shifting the values down the array. 
-         * returns the new array. 
-         * @param array 
-         */
-    private static int [] shiftDown(int [] array){
-     int[] newArr = new int[13];
-     for(int i=0; i<12; i++){
-         newArr[i]= array[i+1];
-     }
-     newArr[12]=0;
-     return newArr;
-    }
-    
+   
     
 }//end class

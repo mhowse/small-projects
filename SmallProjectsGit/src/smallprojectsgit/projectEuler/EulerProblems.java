@@ -15,14 +15,11 @@ public class EulerProblems {
     
     
     public static void main (String [] args){
-        //problem1();
-        //problem2a();
-       // problem3();
-        //problem4();
-        //problem5();
+        //problem1(); //problem2a();// problem3();
+        //problem4();//problem5();
          // problem6(); 
-        //problem7();
-        problem8();
+        //problem7(); problem8();
+        problem9();
     }//end main method
     
     /**
@@ -322,5 +319,15 @@ public class EulerProblems {
     
     }
    
-    
+    /**
+     * problem9()
+     * A Pythagorean triplet is a set of three natural numbers, a < b < c, for which,
+     * a2 + b2 = c2
+     * For example, 32 + 42 = 9 + 16 = 25 = 52.
+     * There exists exactly one Pythagorean triplet for which a + b + c = 1000.
+     */
+    private static void problem9(){
+        
+        
+    }
 }//end class

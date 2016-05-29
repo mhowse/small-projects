@@ -368,14 +368,35 @@ public class EulerProblems {
      */
     private static void problem10(){
         int high =2000001;
+        ArrayList<Integer> primes =new ArrayList<>();
         ArrayList<Integer> array = new ArrayList<>(high);
-        int sum=0;
+        int current=0;
+        int sum=0;  
         //fill array
-        for(int i=1; i<high; i++){
-            array.set(i, i);
+        for(int i=0; i<high; i++){ //prime numbers are greater then 1. 
+            array.set(i, i);        
+            }
+        for(int ind=0; ind<array.size();ind++ ){
+            current=array.get(ind);
+            if(current%2==0){
+                if(current ==2){
+                    primes.add(current); //if it is a prime add it to the prime list 
+                }
+                
+            } else{
+                primes.add(ind);//if it is a prime add it to the prime list 
+                for(int indx=ind; indx<array.size(); indx++){ //for every other element in the list; 
+                if(array.get(indx)%ind==0){
+                    array.remove(indx);
+                }
+            }
+                
+            }
         }
-       // array.remove(0); //remove one. 
-       
+     
+        
+        // array.remove(0); //remove one.
+        
         
     }
     

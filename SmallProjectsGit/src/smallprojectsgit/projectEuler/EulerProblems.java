@@ -367,6 +367,14 @@ public class EulerProblems {
      * Find the sum of all the primes below two million.
      */
     private static void problem10(){
+        int high =2000001;
+        ArrayList<Integer> array = new ArrayList<>(high);
+        int sum=0;
+        //fill array
+        for(int i=1; i<high; i++){
+            array.set(i, i);
+        }
+       // array.remove(0); //remove one. 
        
         
     }

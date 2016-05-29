@@ -375,16 +375,23 @@ public class EulerProblems {
         int sum=0;  
        
         for(int i=0; i<high; i++){ //prime numbers are greater then 1. 
-            array.add(i, i);      
+            array.add(i, i); 
             }
+        for(int x=0; x<array.size(); x++){
+            System.out.print("    "+array.get(x) );
+        }
         System.out.println("arraysize = "+array.size());
-        for(int ind=0; ind<array.size();ind++ ){
+        for(int ind=0; ind<array.size(); ind++ ){
             current=array.get(ind);
+            System.out.println("ind ="+ind);
+                    
+            System.out.println("current="+current);
             if(current%2==0){
                 if(current ==2){
                     primes.add(current); //if it is a prime add it to the prime list 
                     sum +=current;
                 }
+                System.out.println("Removing even numbers");
                 array.remove(ind);
                 } else{
                 primes.add(current);//if it is a prime add it to the prime list 
@@ -393,6 +400,7 @@ public class EulerProblems {
                 for(int indx=ind; indx<array.size(); indx++){ //for every other element in the list; 
                 if(array.get(indx)%current==0){
                     array.remove(indx);
+                    System.out.println("Removing things.");
                 }
             }
                 

@@ -19,7 +19,8 @@ public class EulerProblems {
         //problem4();//problem5();
          // problem6(); 
         //problem7(); problem8();
-        problem9();
+       // problem9();
+        problem10();
     }//end main method
     
     /**
@@ -369,35 +370,40 @@ public class EulerProblems {
     private static void problem10(){
         int high =2000001;
         ArrayList<Integer> primes =new ArrayList<>();
-        ArrayList<Integer> array = new ArrayList<>(high);
+        ArrayList<Integer> array = new ArrayList<>();
         int current=0;
         int sum=0;  
-        //fill array
+       
         for(int i=0; i<high; i++){ //prime numbers are greater then 1. 
-            array.set(i, i);        
+            array.add(i, i);      
             }
+        System.out.println("arraysize = "+array.size());
         for(int ind=0; ind<array.size();ind++ ){
             current=array.get(ind);
             if(current%2==0){
                 if(current ==2){
                     primes.add(current); //if it is a prime add it to the prime list 
+                    sum +=current;
                 }
-                
-            } else{
-                primes.add(ind);//if it is a prime add it to the prime list 
+                array.remove(ind);
+                } else{
+                primes.add(current);//if it is a prime add it to the prime list 
+                sum+=current;
+                System.out.println("adding to sum");
                 for(int indx=ind; indx<array.size(); indx++){ //for every other element in the list; 
-                if(array.get(indx)%ind==0){
+                if(array.get(indx)%current==0){
                     array.remove(indx);
                 }
             }
                 
             }
         }
-     
-        
-        // array.remove(0); //remove one.
-        
-        
+        System.out.println("other side of all the for loops. ");
+        System.out.println("Sum ="+sum);
+        System.out.println("Primes are ");
+        for(int i:primes){
+            System.out.println(primes.get(i));
+        }
     }
     
 }//end class

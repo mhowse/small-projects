@@ -372,7 +372,7 @@ public class EulerProblems {
         ArrayList<Integer> primes =new ArrayList<>();
         ArrayList<Integer> array = new ArrayList<>();
         int current=0;
-        int sum=0;  
+        Long sum= new Long(0);  
        
         for(int i=0; i<high; i++){ //prime numbers are greater then 1. 
             array.add(i, i); 
@@ -385,7 +385,6 @@ public class EulerProblems {
         for(int ind=0; ind<array.size(); ind++ ){
             current=array.get(ind);
             System.out.println("ind ="+ind);
-                    
             System.out.println("current="+current);
             if(current%2==0){
                 if(current ==2){
@@ -412,8 +411,9 @@ public class EulerProblems {
         System.out.println("Sum ="+sum);
         System.out.println("Primes are ");
         for(int t=0; t<primes.size();t++){
-          //  System.out.println(primes.get(i));
-            sum+=primes.get(t);
+           System.out.println(primes.get(t));
+            sum+= Long.valueOf(primes.get(t));
+            System.out.println("Sum = "+sum);
         }
         System.out.println("Sum ="+sum);
     }

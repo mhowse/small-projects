@@ -377,10 +377,11 @@ public class EulerProblems {
         for(int i=0; i<high; i++){ //prime numbers are greater then 1. 
             array.add(i, i); 
             }
-        for(int x=0; x<array.size(); x++){
+      /*  for(int x=0; x<array.size(); x++){
             System.out.print("    "+array.get(x) );
-        }
+        }*/
         System.out.println("arraysize = "+array.size());
+        
         for(int ind=0; ind<array.size(); ind++ ){
             current=array.get(ind);
             System.out.println("ind ="+ind);
@@ -389,29 +390,32 @@ public class EulerProblems {
             if(current%2==0){
                 if(current ==2){
                     primes.add(current); //if it is a prime add it to the prime list 
-                    sum +=current;
                 }
-                System.out.println("Removing even numbers");
+                System.out.print("Removing even numbers");
                 array.remove(ind);
+                ind--;
                 } else{
                 primes.add(current);//if it is a prime add it to the prime list 
-                sum+=current;
-                System.out.println("adding to sum");
+                //System.out.println("adding to sum");
+                if((current !=1)&&(current!=0)){
                 for(int indx=ind; indx<array.size(); indx++){ //for every other element in the list; 
-                if(array.get(indx)%current==0){
+                if((array.get(indx)%current==0) ){
                     array.remove(indx);
-                    System.out.println("Removing things.");
+                   // System.out.println("Removing things.");
                 }
             }
+                }
                 
             }
         }
         System.out.println("other side of all the for loops. ");
         System.out.println("Sum ="+sum);
         System.out.println("Primes are ");
-        for(int i:primes){
-            System.out.println(primes.get(i));
+        for(int t=0; t<primes.size();t++){
+          //  System.out.println(primes.get(i));
+            sum+=primes.get(t);
         }
+        System.out.println("Sum ="+sum);
     }
     
 }//end class

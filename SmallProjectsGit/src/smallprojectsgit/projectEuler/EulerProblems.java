@@ -371,21 +371,40 @@ public class EulerProblems {
         int high =2000001;
         ArrayList<Integer> primes =new ArrayList<>();
         ArrayList<Integer> array = new ArrayList<>();
+        Boolean [] arr = new Boolean [high];
         int current=0;
         Long sum= new Long(0);  
        
-        for(int i=0; i<high; i++){ //prime numbers are greater then 1. 
-            array.add(i, i); 
+        for(int i=0; i<high; i++){ //set all indexes to true.
+            arr[i] = true;
             }
-      /*  for(int x=0; x<array.size(); x++){
-            System.out.print("    "+array.get(x) );
-        }*/
-        System.out.println("arraysize = "+array.size());
+        System.out.println("arraysize = "+arr.length);
         
         for(int ind=0; ind<array.size(); ind++ ){
-            current=array.get(ind);
-           // System.out.println("ind ="+ind);
-            //System.out.println("current="+current);
+            if(arr[ind]==true){
+            if(ind <3){
+                if(ind ==0){
+                    
+                }else if (ind ==1){
+                    
+                }else if(ind ==2){
+                    primes.add(ind);
+                    for(int index=ind; index<high; index+=2){
+                        if(index%2==0){ //double check its an even number
+                            arr[index]=false;
+                        }
+                    }
+                }
+                
+            } else{
+                if(ind%2==0){ //if even number set to false
+                  arr[ind]=false;  
+                }
+                    
+               
+            }
+            
+            
             if(current%2==0){
                 if(current ==2){
                     primes.add(current); //if it is a prime add it to the prime list 
@@ -405,6 +424,7 @@ public class EulerProblems {
             }
                 }
                 
+            }
             }
         }
         System.out.println("other side of all the for loops. ");

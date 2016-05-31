@@ -384,13 +384,13 @@ public class EulerProblems {
         
         for(int ind=0; ind<array.size(); ind++ ){
             current=array.get(ind);
-            System.out.println("ind ="+ind);
-            System.out.println("current="+current);
+           // System.out.println("ind ="+ind);
+            //System.out.println("current="+current);
             if(current%2==0){
                 if(current ==2){
                     primes.add(current); //if it is a prime add it to the prime list 
                 }
-                System.out.print("Removing even numbers");
+              //  System.out.print("Removing even numbers");
                 array.remove(ind);
                 ind--;
                 } else{
@@ -410,12 +410,16 @@ public class EulerProblems {
         System.out.println("other side of all the for loops. ");
         System.out.println("Sum ="+sum);
         System.out.println("Primes are ");
+        int sumCount=0;
         for(int t=0; t<primes.size();t++){
            System.out.println(primes.get(t));
             sum+= Long.valueOf(primes.get(t));
             System.out.println("Sum = "+sum);
+            sumCount++;
         }
+        
         System.out.println("Sum ="+sum);
+        System.out.println("sUMCOUNT = "+sumCount);
     }
     
 }//end class

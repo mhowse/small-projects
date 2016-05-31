@@ -380,7 +380,7 @@ public class EulerProblems {
             }
         System.out.println("arraysize = "+arr.length);
         
-        for(int ind=0; ind<array.size(); ind++ ){
+        for(int ind=0; ind<high; ind++ ){
             if(arr[ind]==true){
             if(ind <3){
                 if(ind ==0){
@@ -389,43 +389,29 @@ public class EulerProblems {
                     
                 }else if(ind ==2){
                     primes.add(ind);
+                    int evencount=1;
                     for(int index=ind; index<high; index+=2){
                         if(index%2==0){ //double check its an even number
                             arr[index]=false;
+                            evencount++;
+                           
                         }
                     }
+                    System.out.println("Evencount = "+evencount);
                 }
                 
             } else{
-                if(ind%2==0){ //if even number set to false
-                  arr[ind]=false;  
-                }
-                    
+                primes.add(ind);
+                  for(int index=ind; index<high; index+=ind){ //iterate up in sets of itself. 
+                        if(index%ind==0){ //if it divides by ind, then not false, 
+                            arr[index]=false;  
+                        }
+                    }   
                
             }
             
-            
-            if(current%2==0){
-                if(current ==2){
-                    primes.add(current); //if it is a prime add it to the prime list 
-                }
-              //  System.out.print("Removing even numbers");
-                array.remove(ind);
-                ind--;
-                } else{
-                primes.add(current);//if it is a prime add it to the prime list 
-                //System.out.println("adding to sum");
-                if((current !=1)&&(current!=0)){
-                for(int indx=ind; indx<array.size(); indx++){ //for every other element in the list; 
-                if((array.get(indx)%current==0) ){
-                    array.remove(indx);
-                   // System.out.println("Removing things.");
-                }
-            }
-                }
-                
-            }
-            }
+                 
+            }          
         }
         System.out.println("other side of all the for loops. ");
         System.out.println("Sum ="+sum);

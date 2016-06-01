@@ -371,9 +371,7 @@ public class EulerProblems {
     private static void problem10(){
         int high =2000001;
         ArrayList<Integer> primes =new ArrayList<>();
-        ArrayList<Integer> array = new ArrayList<>();
         Boolean [] arr = new Boolean [high];
-        int current=0;
         Long sum= new Long(0);  
        
         for(int i=0; i<high; i++){ //set all indexes to true.
@@ -457,6 +455,7 @@ public class EulerProblems {
         int [] row19={20, 73, 35, 29, 78, 31, 90, 01, 74, 31, 49, 71, 48, 86, 81, 16, 23, 57, 05, 54};
         int [] row20={01, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 01, 89, 19, 67, 48};
     
+        
 
                 
     }

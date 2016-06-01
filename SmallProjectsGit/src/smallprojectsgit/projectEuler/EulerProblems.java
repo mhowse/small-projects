@@ -455,7 +455,15 @@ public class EulerProblems {
         int [] row19={20, 73, 35, 29, 78, 31, 90, 01, 74, 31, 49, 71, 48, 86, 81, 16, 23, 57, 05, 54};
         int [] row20={01, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 01, 89, 19, 67, 48};
     
-        
+        ArrayList<Integer> products=new ArrayList<>();//to hold products
+        ArrayList<int[]> sequences= new ArrayList<>();//to hold the sequences that cause the products,
+        //using indexes for synching, will have 5 numbers, first two willrefer to the row/column as 
+        int index=0;
+        for(int i =0; i<16;i++){  //for 16 horizontal sequences
+            for(int ind =0; ind<20; ind++){ //for 20 rows
+                
+            }
+        }
 
                 
     }

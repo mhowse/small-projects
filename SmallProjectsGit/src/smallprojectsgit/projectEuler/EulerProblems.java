@@ -477,6 +477,14 @@ public class EulerProblems {
      * Problem 12, find the triangle number with over 500 divisors. 
      */
     private static void problem12(){
+        int natural=1; //current natural number. 
+        int tri = 1; //triangle number. 
+        int noofdivisors=0;
+        while(true){
+               tri += natural; //to generate the current triange number. 
+           
+            natural++;
+        }
         
     }
 }//end class

@@ -12,7 +12,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.math.BigInteger;
 public class EulerProblems {
-    
+    /**
+     * unfinished problems :
+     * problem11();
+     * @param args 
+     */
     
     public static void main (String [] args){
         //problem1(); //problem2a();// problem3();
@@ -21,7 +25,8 @@ public class EulerProblems {
         //problem7(); problem8();
        // problem9();
        // problem10();
-        problem11();
+       // problem11();
+        problem12();
     }//end main method
     
     /**
@@ -466,5 +471,12 @@ public class EulerProblems {
         }
 
                 
+    }
+    
+    /**
+     * Problem 12, find the triangle number with over 500 divisors. 
+     */
+    private static void problem12(){
+        
     }
 }//end class

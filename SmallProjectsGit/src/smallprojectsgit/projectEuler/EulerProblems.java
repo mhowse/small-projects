@@ -482,8 +482,9 @@ public class EulerProblems {
         int noofdivisors=0;
         boolean run=true;
         while(run){
-               ArrayList <Integer> divList = new ArrayList<>();
+             //  ArrayList <Integer> divList = new ArrayList<>();
                tri += natural; //to generate the current triange number. 
+               System.out.println(tri);
                //instead of a list of divisors, a 
                // working out of how many, if teh answer reached at the end i
               int n=tri;

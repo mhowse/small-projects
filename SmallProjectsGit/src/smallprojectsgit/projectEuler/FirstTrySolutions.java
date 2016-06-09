@@ -1,6 +1,7 @@
 package smallprojectsgit.projectEuler;
 
 import java.math.BigInteger;
+import java.util.ArrayList;
 
 /**
  * FirstTrySolutions.java
@@ -299,5 +300,109 @@ public class FirstTrySolutions{
            System.out.print(n + "\t");
        }
   }
+       /**
+     * problem9()
+     * A Pythagorean triplet is a set of three natural numbers, a < b < c, for which,
+     * a2 + b2 = c2
+     * For example, 32 + 42 = 9 + 16 = 25 = 52.
+     * There exists exactly one Pythagorean triplet for which a + b + c = 1000.
+     */
+    private static void problem9(){
+        int a,b,c;
+        int c2;
+        int total =0;
+        int high =1000;
+        int iterate =0;
+        double cDouble =0;
+        //a2+b2=c2..  so c should be probably more then 500 (1/2 of 1000)
+        //100^2 =10 000; so a, and b should be less then 100;
+        for( a=1; a<300; a++){//a should be the smallest. 
+            for( b =2; b<500; b++){ //b between a and c
+                iterate++;
+                c2=(a*a)+(b*b);
+             cDouble=Math.sqrt(c2); 
+             if ((cDouble == Math.floor(cDouble)) && !Double.isInfinite(cDouble)) {
+                  c=(int) cDouble;
+             total =a+b+c;
+                 System.out.println("a= "+a+" b= "+b+" c= "+c);
+                 System.out.println("Total is "+ total);
+                 if(a+b+c==1000){
+            if(((a*a)+(b*b))==(c*c)){
+                System.out.print("a = "+a);
+                System.out.print("b = "+b);
+                System.out.print("c = "+c);
+                System.out.println("Found");
+                System.out.println((a*a)+" + "+(b*b)+" = "+(c*c));
+                System.out.println("Iterate count= "+iterate);
+                return;
+            }  
+        }
+        }
+        }
+        }
+        System.out.println("Iterate count="+iterate);
+        }
     
+    /**
+     * The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
+     * Find the sum of all the primes below two million.
+     */
+    private static void problem10(){
+        int high =2000001;
+        ArrayList<Integer> primes =new ArrayList<>();
+        Boolean [] arr = new Boolean [high];
+        Long sum= new Long(0);  
+       
+        for(int i=0; i<high; i++){ //set all indexes to true.
+            arr[i] = true;
+            }
+        System.out.println("arraysize = "+arr.length);
+        
+        for(int ind=0; ind<high; ind++ ){
+            if(arr[ind]==true){
+            if(ind <3){
+                if(ind ==0){
+                    
+                }else if (ind ==1){
+                    
+                }else if(ind ==2){
+                    primes.add(ind);
+                    int evencount=1;
+                    for(int index=ind; index<high; index+=2){
+                        if(index%2==0){ //double check its an even number
+                            arr[index]=false;
+                            evencount++;
+                           
+                        }
+                    }
+                    System.out.println("Evencount = "+evencount);
+                }
+                
+            } else{
+                primes.add(ind);
+                  for(int index=ind; index<high; index+=ind){ //iterate up in sets of itself. 
+                        if(index%ind==0){ //if it divides by ind, then not false, 
+                            arr[index]=false;  
+                        }
+                    }   
+               
+            }
+            
+                 
+            }          
+        }
+        System.out.println("other side of all the for loops. ");
+        System.out.println("Sum ="+sum);
+        System.out.println("Primes are ");
+        int sumCount=0;
+        for(int t=0; t<primes.size();t++){
+           System.out.println(primes.get(t));
+            sum+= Long.valueOf(primes.get(t));
+            System.out.println("Sum = "+sum);
+            sumCount++;
+        }
+        
+        System.out.println("Sum ="+sum);
+        System.out.println("sUMCOUNT = "+sumCount);
+    }
 }

@@ -499,11 +499,13 @@ public class EulerProblems {
                
                //noofdivisors=divList.size()-1;
                //check and break out of loop. 
-           if(noofdivisors>499){
-               System.out.println("Triangle number "+tri+"has over 499 divisors");
+           if(noofdivisors>500){
+               System.out.println("Triangle number "+tri+"has over 500 divisors");
+               System.out.println("It has "+noofdivisors);
                run=false;
            }
-            natural++; //iterate  
+            natural++; //iterate 
+            noofdivisors=0;//clear for next iteration
         }
         
     }

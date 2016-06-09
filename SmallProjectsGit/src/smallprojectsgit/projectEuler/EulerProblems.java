@@ -480,10 +480,19 @@ public class EulerProblems {
         int natural=1; //current natural number. 
         int tri = 1; //triangle number. 
         int noofdivisors=0;
-        while(true){
+        boolean run=true;
+        while(run){
+               ArrayList <Integer> divList = new ArrayList<>();
                tri += natural; //to generate the current triange number. 
-           
-            natural++;
+               //generate list of divisors. 
+               
+               noofdivisors=divList.size()-1;
+               //check and break out of loop. 
+           if(noofdivisors>499){
+               System.out.println("Triangle number "+tri+"has over 499 divisors");
+               run=false;
+           }
+            natural++; //iterate  
         }
         
     }

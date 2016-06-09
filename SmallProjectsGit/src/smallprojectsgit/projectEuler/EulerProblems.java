@@ -484,7 +484,7 @@ public class EulerProblems {
         while(run){
              //  ArrayList <Integer> divList = new ArrayList<>();
                tri += natural; //to generate the current triange number. 
-               System.out.println(tri);
+               System.out.print(tri);
                //instead of a list of divisors, a 
                // working out of how many, if teh answer reached at the end i
               int n=tri;
@@ -497,7 +497,7 @@ public class EulerProblems {
                          noofdivisors++;
                      }
                  }
-               
+               System.out.println("No of divisors ="+noofdivisors);
                //noofdivisors=divList.size()-1;
                //check and break out of loop. 
            if(noofdivisors>500 ){

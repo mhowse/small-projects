@@ -477,8 +477,8 @@ public class EulerProblems {
      * Problem 12, find the triangle number with over 500 divisors. 
      */
     private static void problem12(){
-        int natural=1; //current natural number. 
-        int tri = 1; //triangle number. 
+        int natural=0; //current natural number. 
+        int tri = 0; //triangle number. 
         int noofdivisors=0;
         boolean run=true;
         while(run){
@@ -500,7 +500,7 @@ public class EulerProblems {
                
                //noofdivisors=divList.size()-1;
                //check and break out of loop. 
-           if(noofdivisors>500){
+           if(noofdivisors>500 ){
                System.out.println("Triangle number "+tri+"has over 500 divisors");
                System.out.println("It has "+noofdivisors);
                run=false;

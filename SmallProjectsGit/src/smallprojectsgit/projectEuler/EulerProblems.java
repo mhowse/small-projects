@@ -488,13 +488,10 @@ public class EulerProblems {
                //instead of a list of divisors, a 
                // working out of how many, if teh answer reached at the end i
               int n=tri;
-                 for (int i=1; i<n; i++){
-                     if(n %i==0){
-                         n=tri/i;
-                         if(n != i){
-                             noofdivisors++;
-                         }
-                         noofdivisors++;
+                 for (int i=1; i<Math.sqrt(n); i++){
+                     if(n % i==0){
+                         //n=tri/i;
+                         noofdivisors+=2;
                      }
                  }
                System.out.println("No of divisors ="+noofdivisors);

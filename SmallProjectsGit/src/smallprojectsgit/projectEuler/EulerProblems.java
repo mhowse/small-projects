@@ -515,6 +515,7 @@ public class EulerProblems {
     private static void problem14(){
         long start =13; //int max value = 2 147 483 647
         long high = 1000000; //looking for a number under 1 million.
+        long [] storedLengths = new long [1000000];
         long curr=13;
         long chainLength =0;// the largest chain length yet.
         long  currChain=10;//13 = starting chain 10 long.
@@ -529,7 +530,17 @@ public class EulerProblems {
                 } else
                     curr = (3*curr)+1;
                 currChain++;
+                if(curr<i){
+                    String l = String.valueOf(curr);
+                   currChain+=storedLengths[Integer.parseInt(l)]; 
+/*i will always be less then 1 million, and thus inside int range.Will not cause overflow*/
+                   curr=1;
+                }
+                
             }
+            String d = String.valueOf(curr);
+             int x=Integer.parseInt(d);
+            storedLengths [x]= currChain;
             if(currChain>chainLength){
                 chainLength =currChain;
                 startingN =i;

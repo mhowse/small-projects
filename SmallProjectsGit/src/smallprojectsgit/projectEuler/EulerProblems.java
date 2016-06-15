@@ -513,13 +513,14 @@ public class EulerProblems {
      * longest Collatz sequence.
      */
     private static void problem14(){
-        int start =13; //int max value = 2 147 483 647
-        int high = 1000000; //looking for a number under 1 million.
-        int curr=13;
-        int chainLength =0;// the largest chain length yet.
-        int  currChain=10;//13 = starting chain 10 long.
-        int startingN=0;// number that causes the chain length;
-        for(int i=start; i<high; i++){
+        long start =13; //int max value = 2 147 483 647
+        long high = 1000000; //looking for a number under 1 million.
+        long curr=13;
+        long chainLength =0;// the largest chain length yet.
+        long  currChain=10;//13 = starting chain 10 long.
+        long startingN=0;// number that causes the chain length;
+        for(long i=start; i<high; i++){
+            System.out.println(i);
             curr = i;
             currChain=0;
             while(curr != 1){

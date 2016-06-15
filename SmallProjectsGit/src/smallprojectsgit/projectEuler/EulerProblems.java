@@ -538,7 +538,7 @@ public class EulerProblems {
                 }
                 
             }
-            String d = String.valueOf(curr);
+            String d = String.valueOf(i);
              int x=Integer.parseInt(d);
             storedLengths [x]= currChain;
             if(currChain>chainLength){

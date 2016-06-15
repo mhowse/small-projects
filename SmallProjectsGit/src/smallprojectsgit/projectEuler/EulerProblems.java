@@ -15,18 +15,17 @@ public class EulerProblems {
     /**
      * unfinished problems :
      * problem11();
+     * problem13();
      * @param args 
      */
     
     public static void main (String [] args){
         //problem1(); //problem2a();// problem3();
         //problem4();//problem5();
-         // problem6(); 
-        //problem7(); problem8();
-       // problem9();
-       // problem10();
-       // problem11();
-        problem12();
+         // problem6(); //problem7(); problem8();
+       // problem9(); // problem10();
+       // problem11(); // problem12(); problem13();
+        problem14();
     }//end main method
     
     /**
@@ -500,6 +499,22 @@ public class EulerProblems {
             natural++; //iterate 
             noofdivisors=0;//clear for next iteration
         }
+        
+    }
+    
+    /**
+     * 
+     */
+    public static void problem13(){
+        
+    }
+    
+    /**
+     * longest Collatz sequence.
+     */
+    private static void problem14(){
+        int start =13; //int max value = 2 147 483 647
+        int high = 1000000; //looking for a number under 1 million.
         
     }
 }//end class

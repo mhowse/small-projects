@@ -522,7 +522,7 @@ public class EulerProblems {
         for(long i=start; i<high; i++){
             System.out.println(i);
             curr = i;
-            currChain=0;
+            currChain=1;
             while(curr != 1){
                 if (curr%2 ==0){
                     curr = curr/2;

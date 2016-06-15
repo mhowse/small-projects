@@ -405,4 +405,33 @@ public class FirstTrySolutions{
         System.out.println("Sum ="+sum);
         System.out.println("sUMCOUNT = "+sumCount);
     }
+      /**
+     * longest Collatz sequence.
+     */
+    private static void problem14(){
+        long start =13; //int max value = 2 147 483 647
+        long high = 1000000; //looking for a number under 1 million.
+        long curr=13;
+        long chainLength =0;// the largest chain length yet.
+        long  currChain=10;//13 = starting chain 10 long.
+        long startingN=0;// number that causes the chain length;
+        for(long i=start; i<high; i++){
+            System.out.println(i);
+            curr = i;
+            currChain=1;
+            while(curr != 1){
+                if (curr%2 ==0){
+                    curr = curr/2;
+                } else
+                    curr = (3*curr)+1;
+                currChain++;
+            }
+            if(currChain>chainLength){
+                chainLength =currChain;
+                startingN =i;
+            }
+        }
+        System.out.println("Answer is "+startingN+"With a chain length of "+chainLength);
+        
+    }
 }

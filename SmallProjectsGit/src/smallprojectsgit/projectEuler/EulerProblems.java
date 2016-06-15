@@ -515,6 +515,26 @@ public class EulerProblems {
     private static void problem14(){
         int start =13; //int max value = 2 147 483 647
         int high = 1000000; //looking for a number under 1 million.
+        int curr=13;
+        int chainLength =0;// the largest chain length yet.
+        int  currChain=10;//13 = starting chain 10 long.
+        int startingN=0;// number that causes the chain length;
+        for(int i=start; i<high; i++){
+            curr = i;
+            currChain=0;
+            while(curr != 1){
+                if (curr%2 ==0){
+                    curr = curr/2;
+                } else
+                    curr = (3*curr)+1;
+                currChain++;
+            }
+            if(currChain>chainLength){
+                chainLength =currChain;
+                startingN =i;
+            }
+        }
+        System.out.println("Answer is "+startingN+"With a chain length of "+chainLength);
         
     }
 }//end class

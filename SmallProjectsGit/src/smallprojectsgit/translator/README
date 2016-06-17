@@ -1,0 +1,4 @@
+modified as per https://isorelax-jaxp-bridge.dev.java.net/issues/show_bug.cgi?id=1
+
+fixed the service file
+made SchemaFactoryImpl public because of a reflection bug ( http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4071957 )

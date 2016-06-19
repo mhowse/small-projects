@@ -1,28 +1,30 @@
 body {
-    background-color: ccffff;
+    background-color: #FFFFCC;
+    position:relative;
+    padding-top: 100px;
 }
+
+
 img {
     top:0;
-    float: left;
-    margin: 0 0 10px 10px;
+    left:0px;
+    margin: 0 0 5px 5px;
     padding-right: 750px;
 }
 
 ul {
     float: right;
     list-style-type: none;
-    margin: 0;
-    padding: 0;
     overflow: hidden;
     position:fixed;
     top:0;
     width:100%;
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     overflow: hidden;
     background-color: #00cccc;   
-    border: 5px solid #000000;
+    border: 1px solid #000000;
 }
 
 li {

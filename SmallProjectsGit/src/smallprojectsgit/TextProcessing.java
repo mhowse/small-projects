@@ -27,10 +27,11 @@ public class TextProcessing{
         while (scan.hasNext()){
         input = scan.nextLine();
         String [] t =input.split("-",4);
-        output =t[2]+"/"+t[1]+"/"+t[0];
+        String [] a =t[2].split(" ");
+        output =a[0]+"/"+t[1]+"/"+t[0];
         System.out.println(output);     
     }
-       
+        scan.close();
         
         
     }

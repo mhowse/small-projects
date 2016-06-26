@@ -554,16 +554,38 @@ public class EulerProblems {
     /**
      * What is the sum of the digits of the number 2^1000?
      */   
-    public static void problem16(){
+    public  static void problem16(){
         double n=2;
         double sum =0;
         n= java.lang.Math.pow(n, 1000);
-        String x= Double.toString(n); 
-        System.out.println("result = "+x);
+        System.out.println(n);
+        String str = Double.toString(n);
+        StringBuilder x= new StringBuilder(str); 
+        /*to convert out of scientific notation*/
         for(int i=0; i<x.length(); i++){
-          if(x.charAt(i) != '.'){
-              sum+= Double.valueOf(x.charAt(i));
+          if(x.charAt(i) == '.'){ //find the dot.
+              x.deleteCharAt(i);
+              /* We don't need to convert out of scientific notation as we are adding the digits.
+              Scientific notation just  hides the zeros, but we do need to get rid of the numbers after the e, and the dot. 
+              */
+              /*scan forwards to find the e and number to shift.Delete it all as it throws off the sum.  */
+              for(int ind=i; ind<x.length(); ind++){
+                  if(x.charAt(ind) == 'E'){
+                      x.deleteCharAt(ind); 
+                      for(int z=ind; z<x.length();z++){
+                          x.deleteCharAt(z);
+                      } 
+                    }
           }
+            
+        }
+        }
+       
+        /* to add up the sum*/
+        for(int t=0; t<x.length(); t++){
+            System.out.println(x.charAt(t));
+              sum+= Double.valueOf(x.charAt(t));
+          
             System.out.println("sum now = "+sum);
         }
         System.out.println("sum = "+sum);

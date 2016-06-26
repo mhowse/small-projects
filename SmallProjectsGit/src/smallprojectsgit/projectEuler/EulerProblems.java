@@ -16,6 +16,7 @@ public class EulerProblems {
      * unfinished problems :
      * problem11();
      * problem13();
+     * problem15();
      * @param args 
      */
     
@@ -24,8 +25,8 @@ public class EulerProblems {
         //problem4();//problem5();
          // problem6(); //problem7(); problem8();
        // problem9(); // problem10();
-       // problem11(); // problem12(); problem13();
-        problem14();
+       // problem11(); // problem12(); problem13();    problem14();
+        problem16()
     }//end main method
     
     /**
@@ -547,6 +548,25 @@ public class EulerProblems {
             }
         }
         System.out.println("Answer is "+startingN+"With a chain length of "+chainLength);
+        
+    }
+    
+    /**
+     * What is the sum of the digits of the number 2^1000?
+     */   
+    public static void problem16(){
+        double n=2;
+        double sum =0;
+        n= java.lang.Math.pow(n, 1000);
+        String x= Double.toString(n); 
+        for(int i=0; i<x.length(); i++){
+          
+            
+        }
+        
+        
+        
+        
         
     }
 }//end class

@@ -555,12 +555,11 @@ public class EulerProblems {
      * What is the sum of the digits of the number 2^1000?
      */   
     public  static void problem16(){
-        double n=2;
-        double sum =0;
-        n= java.lang.Math.pow(n, 1000);
+        int sum=0;
+        BigInteger n =  BigInteger.valueOf(2);
+        n=n.pow(1000);
         System.out.println(n);
-        String str = Double.toString(n);
-        StringBuilder x= new StringBuilder(str); 
+        StringBuilder x= new StringBuilder(n.toString()); 
         /*to convert out of scientific notation*/
         for(int i=0; i<x.length(); i++){
           if(x.charAt(i) == '.'){ //find the dot.

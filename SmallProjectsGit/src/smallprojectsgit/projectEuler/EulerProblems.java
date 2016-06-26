@@ -26,7 +26,7 @@ public class EulerProblems {
          // problem6(); //problem7(); problem8();
        // problem9(); // problem10();
        // problem11(); // problem12(); problem13();    problem14();
-        problem16()
+        problem16();
     }//end main method
     
     /**
@@ -559,13 +559,15 @@ public class EulerProblems {
         double sum =0;
         n= java.lang.Math.pow(n, 1000);
         String x= Double.toString(n); 
+        System.out.println("result = "+x);
         for(int i=0; i<x.length(); i++){
-          
-            
+          if(x.charAt(i) != '.'){
+              sum+= Double.valueOf(x.charAt(i));
+          }
+            System.out.println("sum now = "+sum);
         }
-        
-        
-        
+        System.out.println("sum = "+sum);
+      
         
         
     }

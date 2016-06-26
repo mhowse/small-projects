@@ -583,7 +583,8 @@ public class EulerProblems {
         /* to add up the sum*/
         for(int t=0; t<x.length(); t++){
             System.out.println(x.charAt(t));
-              sum+= Double.valueOf(x.charAt(t));
+            char c=x.charAt(t);
+              sum+= Character.getNumericValue(c);
           
             System.out.println("sum now = "+sum);
         }

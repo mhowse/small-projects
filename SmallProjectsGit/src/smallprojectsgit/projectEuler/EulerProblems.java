@@ -26,7 +26,8 @@ public class EulerProblems {
          // problem6(); //problem7(); problem8();
        // problem9(); // problem10();
        // problem11(); // problem12(); problem13();    problem14();
-        problem16();
+      //  problem16(); 
+        problem17();
     }//end main method
     
     /**
@@ -600,15 +601,29 @@ public class EulerProblems {
         int high =1000;
         int sum =0;
         String and = "and";
-        String [] numbers = {"one","two","three","four","five","six","seven","eight","nine","ten"};
+        String [] nos = {"one","two","three","four","five","six","seven","eight","nine","ten"};
         String [] teens = {"eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen", "nineteen"};
         String [] tens ={"twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"};
         String [] hundreds={ "hundred" , "thousand"};
         for(int i=1; i < high; i++){
-            
-            if(i<11){
-                
-            }
+            int temp =i;
+            String s ="";
+            while(temp > 0){
+              if(temp >999){
+                  s=s+ nos[0]+hundreds[1];
+                  temp=temp-1000; 
+              }  
+              if(99<temp && temp <high){
+                  int h = temp/100;
+                  s=s+nos[h-1]+hundreds[0];
+                  temp = temp %100;
+              }
+              if(temp <11){
+                  s=s+nos[temp-1];
+                  temp=0;
+              }
+              
+            } System.out.println(s);
         }
         
     }

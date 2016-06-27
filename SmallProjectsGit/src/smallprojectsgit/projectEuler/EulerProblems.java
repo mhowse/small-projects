@@ -605,7 +605,7 @@ public class EulerProblems {
         String [] teens = {"eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen", "nineteen"};
         String [] tens ={"twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"};
         String [] hundreds={ "hundred" , "thousand"};
-        for(int i=1; i < high; i++){
+        for(int i=1; i < high+1; i++){
             int temp =i;
             String s ="";
             while(temp > 0){
@@ -643,7 +643,8 @@ public class EulerProblems {
               
             } System.out.println(s);
             //add the number of characters to the sum, 
+            sum += s.length();
         }
-        
+        System.out.println("sum = "+ sum);
     }
 }//end class

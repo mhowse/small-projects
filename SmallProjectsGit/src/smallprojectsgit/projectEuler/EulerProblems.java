@@ -614,6 +614,19 @@ public class EulerProblems {
                   temp=0;
               }
                 
+              if(temp<20 &&temp>10){//for the teens
+                  temp=temp-10;
+                  s=s+teens[temp-1];
+                  temp =0;
+              }
+              
+              if( temp >19 &&temp<100){ //for the 20 and ups
+                   int x = temp/10;
+                  s=s+tens[x-2];
+                  temp = temp %10;
+              }
+             
+                
               if(temp >999){ //for 1000
                   s=s+ nos[0]+hundreds[1];
                   temp=temp-1000; 
@@ -626,17 +639,7 @@ public class EulerProblems {
                       s+=and;
                   }
               }
-              if(temp<100){ //for the 20 and ups
-                   int x = temp/10;
-                  s=s+tens[x];
-                  temp = temp %100;
-              }
              
-              if(temp<20 &&temp>10){//for the teens
-                  temp=temp-10;
-                  s=s+teens[temp-1];
-              }
-              
               
             } System.out.println(s);
             //add the number of characters to the sum, 

@@ -589,8 +589,27 @@ public class EulerProblems {
             System.out.println("sum now = "+sum);
         }
         System.out.println("sum = "+sum);
-      
         
+    }
+    
+    /**
+     * If all the numbers from 1 to 1000 (one thousand) inclusive were written out in words, how many letters would be used?
+     * NOTE: Do not count spaces or hyphens. For example, 342 (three hundred and forty-two) contains 23 letters and 115 (one hundred and fifteen) contains 20 letters. The use of "and" when writing out numbers is in compliance with British usage.
+     */
+    public static void problem17(){
+        int high =1000;
+        int sum =0;
+        String and = "and";
+        String [] numbers = {"one","two","three","four","five","six","seven","eight","nine","ten"};
+        String [] teens = {"eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen", "nineteen"};
+        String [] tens ={"twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"};
+        String [] hundreds={ "hundred" , "thousand"};
+        for(int i=1; i < high; i++){
+            
+            if(i<11){
+                
+            }
+        }
         
     }
 }//end class

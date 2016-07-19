@@ -16,6 +16,7 @@ public class EulerProblems {
      * unfinished problems :
      * problem11();
      * problem13();
+     * problem15();
      * @param args 
      */
     
@@ -24,8 +25,9 @@ public class EulerProblems {
         //problem4();//problem5();
          // problem6(); //problem7(); problem8();
        // problem9(); // problem10();
-       // problem11(); // problem12(); problem13();
-        problem14();
+       // problem11(); // problem12(); problem13();    problem14();
+      //  problem16(); 
+        problem17();
     }//end main method
     
     /**
@@ -548,5 +550,101 @@ public class EulerProblems {
         }
         System.out.println("Answer is "+startingN+"With a chain length of "+chainLength);
         
+    }
+    
+    /**
+     * What is the sum of the digits of the number 2^1000?
+     */   
+    public  static void problem16(){
+        int sum=0;
+        BigInteger n =  BigInteger.valueOf(2);
+        n=n.pow(1000);
+        System.out.println(n);
+        StringBuilder x= new StringBuilder(n.toString()); 
+        /*to convert out of scientific notation*/
+        for(int i=0; i<x.length(); i++){
+          if(x.charAt(i) == '.'){ //find the dot.
+              x.deleteCharAt(i);
+              /* We don't need to convert out of scientific notation as we are adding the digits.
+              Scientific notation just  hides the zeros, but we do need to get rid of the numbers after the e, and the dot. 
+              */
+              /*scan forwards to find the e and number to shift.Delete it all as it throws off the sum.  */
+              for(int ind=i; ind<x.length(); ind++){
+                  if(x.charAt(ind) == 'E'){
+                      x.deleteCharAt(ind); 
+                      for(int z=ind; z<x.length();z++){
+                          x.deleteCharAt(z);
+                      } 
+                    }
+          }
+            
+        }
+        }
+       
+        /* to add up the sum*/
+        for(int t=0; t<x.length(); t++){
+            System.out.println(x.charAt(t));
+            char c=x.charAt(t);
+              sum+= Character.getNumericValue(c);
+          
+            System.out.println("sum now = "+sum);
+        }
+        System.out.println("sum = "+sum);
+        
+    }
+    
+    /**
+     * If all the numbers from 1 to 1000 (one thousand) inclusive were written out in words, how many letters would be used?
+     * NOTE: Do not count spaces or hyphens. For example, 342 (three hundred and forty-two) contains 23 letters and 115 (one hundred and fifteen) contains 20 letters. The use of "and" when writing out numbers is in compliance with British usage.
+     */
+    public static void problem17(){
+        int high =1000;
+        int sum =0;
+        String and = "and";
+        String [] nos = {"one","two","three","four","five","six","seven","eight","nine","ten"};
+        String [] teens = {"eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen", "nineteen"};
+        String [] tens ={"twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"};
+        String [] hundreds={ "hundred" , "thousand"};
+        for(int i=1; i < high+1; i++){
+            int temp =i;
+            String s ="";
+            while(temp > 0){
+                if(temp <11){ //for single digits.
+                  s=s+nos[temp-1];
+                  temp=0;
+              }
+                
+              if(temp<20 &&temp>10){//for the teens
+                  temp=temp-10;
+                  s=s+teens[temp-1];
+                  temp =0;
+              }
+              
+              if( temp >19 &&temp<100){ //for the 20 and ups
+                   int x = temp/10;
+                  s=s+tens[x-2];
+                  temp = temp %10;
+              }
+             
+                
+              if(temp >999){ //for 1000
+                  s=s+ nos[0]+hundreds[1];
+                  temp=temp-1000; 
+              }  
+              if(99<temp && temp <high){ //for the hundreds
+                  int h = temp/100;
+                  s=s+nos[h-1]+hundreds[0];
+                  temp = temp %100;
+                  if(temp!= 0){
+                      s+=and;
+                  }
+              }
+             
+              
+            } System.out.println(s);
+            //add the number of characters to the sum, 
+            sum += s.length();
+        }
+        System.out.println("sum = "+ sum);
     }
 }//end class

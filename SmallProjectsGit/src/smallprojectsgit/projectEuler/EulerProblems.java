@@ -21,12 +21,15 @@ public class EulerProblems {
      */
     
     public static void main (String [] args){
-        //problem1(); //problem2a();// problem3();
-        //problem4();//problem5();
-         // problem6(); //problem7(); problem8();
-       // problem9(); // problem10();
-       // problem11(); // problem12(); problem13();    problem14();
-      //  problem16(); 
+        /**/problem1(); problem2a(); problem3();
+        problem4();problem5();
+         problem6(); problem7(); problem8();
+       problem9();  problem10();
+       // problem11(); 
+       problem12(); 
+       //problem13();  
+       problem14();
+       problem16(); /**/
         problem17();
     }//end main method
     
@@ -43,7 +46,7 @@ public class EulerProblems {
             }
             count++;
         }
-        System.out.println("Sum ="+sum);
+        System.out.println("Problem 1 Sum ="+sum);
     }
     
     
@@ -56,7 +59,7 @@ public class EulerProblems {
         int Fibsum=0;
         int current=2;
          int previous=1;
-         int next=0;
+         int next;
         int high =4000000;
         boolean run =true;
         while(current <high){
@@ -67,7 +70,7 @@ public class EulerProblems {
             previous = current; 
             current =next; 
         }
-        System.out.println("Sum ="+Fibsum);
+        System.out.println("Problem 2a Sum ="+Fibsum);
     } //end method
     
     /**
@@ -124,7 +127,7 @@ public class EulerProblems {
         //3 digit = 100 -999 = 899
         //so counting backwards from  high. only check numbers that have the same last digit as first.
         //100x100 = 10000, 998001-10000 = 988001. 
-        System.out.println("high = "+high);
+       // System.out.println("high = "+high);
          while (run){
          String derp = String.valueOf(half1); 
         char [] arr = derp.toCharArray();
@@ -134,8 +137,7 @@ public class EulerProblems {
         }
         derp=derp+Half;
         test = Integer.parseInt(derp);
-      
-           System.out.println("Test palindrome = "+test);
+        //System.out.println("Test palindrome = "+test);
           //find how two 3 digit numbers create it. 
            if(test<high &&test>low){
            for(int i=999; i>99; i--){ // at most 800 checks here of each palindrome; 
@@ -149,10 +151,10 @@ public class EulerProblems {
            if(factor1 !=0){
            factor2 =test/factor1;
            
-           System.out.println("factor1= "+factor1+" factor2 ="+factor2);
+          // System.out.println("factor1= "+factor1+" factor2 ="+factor2);
            }
            if((factor1*factor2)== test){
-               System.out.println("going through conditions.");
+              // System.out.println("going through conditions.");
              if(test<high){ //if the palindrome is smaller then the high
                  if(factor1+factor2<1998){ //if the two factors are not both 999
                      System.out.println("Conditions have been meet"); 
@@ -162,11 +164,11 @@ public class EulerProblems {
            }
            } 
            else{
-               System.out.println("test Palindrome higher then, or lower then, limit.");
+             //  System.out.println("test Palindrome higher then, or lower then, limit.");
            }
            half1--;
          } //end while
-        System.out.println("Palindrome "+test+"is the product of "+factor1+ "and "+factor2);
+        System.out.println("Problem 4 Palindrome "+test+"is the product of "+factor1+ "and "+factor2);
     } //end method
     
     /**
@@ -182,7 +184,7 @@ public class EulerProblems {
             if(  x %19 == 0 && x %18 == 0 && x%17 == 0 && x%16 == 0 ){
                 if(x %15==0&& x%13==0&& x%11==0){
                     if( x%9==0 &&x%7==0 && x%6==0 &&x%3==0){
-                        System.out.println("The number is "+x);
+                        System.out.println("Problem 5 The number is "+x);
                         found =true;
                     }
                 }
@@ -214,7 +216,7 @@ public class EulerProblems {
             sumOfSquares= sumOfSquares +squares[i-1];
         }
         int squaredSum =sum*sum;
-        System.out.println("Squared sum ="+squaredSum);
+        System.out.println("Problem 6 Squared sum ="+squaredSum);
         System.out.println("Sum of Squares = "+sumOfSquares);
         System.out.println("Difference is "+(squaredSum-sumOfSquares));
     }
@@ -240,7 +242,7 @@ public class EulerProblems {
                      }
                   
                 if(primeCount==10001){
-                    System.out.println("the 10001 prime is "+n);
+                    System.out.println("Problem 7 the 10001 prime is "+n);
                     return;
                 }
             }
@@ -299,7 +301,7 @@ public class EulerProblems {
                 product =product.multiply(BigInteger.valueOf(arr[o]));
         }// System.out.println("Product = "+product);
        if(product.equals(greatestProduct)){ //check the product. 
-           System.out.println("Greatest product found.");
+           System.out.println("Problem 8 Greatest product found.");
            System.out.println("Product is " +product);
            System.out.println("Greatest product is "+greatestProduct);
            System.out.println("Sequence is ");
@@ -322,9 +324,7 @@ public class EulerProblems {
         for(int ind=0; ind<13; ind++){
             System.out.print(currSequence[ind]);
         }
-        System.out.println("Runcount = "+runCount );
-        return;
-    
+        System.out.println("Runcount = "+runCount ); 
     }
    
     /**
@@ -337,10 +337,10 @@ public class EulerProblems {
     private static void problem9(){
         int a,b,c;
         int c2;
-        int total =0;
+        int total ;
         int high =1000;
         int iterate =0;
-        double cDouble =0;
+        double cDouble ;
         //a2+b2=c2..  so c should be probably more then 500 (1/2 of 1000)
         //100^2 =10 000; so a, and b should be less then 100;
         for( a=1; a<300; a++){//a should be the smallest. 
@@ -351,8 +351,8 @@ public class EulerProblems {
              if ((cDouble == Math.floor(cDouble)) && !Double.isInfinite(cDouble)) {
                   c=(int) cDouble;
              total =a+b+c;
-                 System.out.println("a= "+a+" b= "+b+" c= "+c);
-                 System.out.println("Total is "+ total);
+                // System.out.println("a= "+a+" b= "+b+" c= "+c);
+              //   System.out.println("Total is "+ total);
                  if(a+b+c==1000){
             if(((a*a)+(b*b))==(c*c)){
                 System.out.print("a = "+a);
@@ -360,14 +360,13 @@ public class EulerProblems {
                 System.out.print("c = "+c);
                 System.out.println("Found");
                 System.out.println((a*a)+" + "+(b*b)+" = "+(c*c));
-                System.out.println("Iterate count= "+iterate);
+                System.out.println("Problem 9 Iterate count= "+iterate);
                 return;
             }  
         }
         }
         }
-        }
-        System.out.println("Iterate count="+iterate);
+        }      //System.out.println("Iterate count="+iterate);
         }
     
     /**
@@ -378,19 +377,18 @@ public class EulerProblems {
         int high =2000001;
         ArrayList<Integer> primes =new ArrayList<>();
         Boolean [] arr = new Boolean [high];
-        Long sum= new Long(0);  
+        Long sum= (long) 0;  
        
         for(int i=0; i<high; i++){ //set all indexes to true.
             arr[i] = true;
             }
-        System.out.println("arraysize = "+arr.length);
+     //   System.out.println("arraysize = "+arr.length);
         
         for(int ind=0; ind<high; ind++ ){
             if(arr[ind]==true){
             if(ind <3){
-                if(ind ==0){
-                    
-                }else if (ind ==1){
+                if(ind ==0 ){
+     }else if (ind ==1){
                     
                 }else if(ind ==2){
                     primes.add(ind);
@@ -402,9 +400,8 @@ public class EulerProblems {
                            
                         }
                     }
-                    System.out.println("Evencount = "+evencount);
+                    //System.out.println("Evencount = "+evencount);
                 }
-                
             } else{
                 primes.add(ind);
                   for(int index=ind; index<high; index+=ind){ //iterate up in sets of itself. 
@@ -418,17 +415,16 @@ public class EulerProblems {
                  
             }          
         }
-        System.out.println("other side of all the for loops. ");
-        System.out.println("Sum ="+sum);
-        System.out.println("Primes are ");
+        System.out.println("Problem 10 ");
+     //   System.out.println("Sum ="+sum);
+      //  System.out.println("Primes are ");
         int sumCount=0;
         for(int t=0; t<primes.size();t++){
-           System.out.println(primes.get(t));
+           //System.out.println(primes.get(t));
             sum+= Long.valueOf(primes.get(t));
-            System.out.println("Sum = "+sum);
+          //  System.out.println("Sum = "+sum);
             sumCount++;
         }
-        
         System.out.println("Sum ="+sum);
         System.out.println("sUMCOUNT = "+sumCount);
     }
@@ -491,10 +487,10 @@ public class EulerProblems {
                          noofdivisors+=2;
                      }
                  }
-               System.out.println("No of divisors ="+noofdivisors);
+              // System.out.println("No of divisors ="+noofdivisors);
                //check and break out of loop. 
            if(noofdivisors>500 ){
-               System.out.println("Triangle number "+tri+"has over 500 divisors");
+               System.out.println("Problem 12 Triangle number "+tri+"has over 500 divisors");
                System.out.println("It has "+noofdivisors);
                run=false;
            }
@@ -512,18 +508,18 @@ public class EulerProblems {
     }
     
     /**
-     * longest Collatz sequence.
+     * Longest Collatz sequence.
      */
     private static void problem14(){
         long start =13; //int max value = 2 147 483 647
         long high = 1000000; //looking for a number under 1 million.
         long [] storedLengths = new long [1000000];
-        long curr=13;
+        long curr;
         long chainLength =0;// the largest chain length yet.
-        long  currChain=10;//13 = starting chain 10 long.
+        long  currChain;//13 = starting chain 10 long.
         long startingN=0;// number that causes the chain length;
         for(long i=start; i<high; i++){
-            System.out.println(i);
+           // System.out.println(i);
             curr = i;
             currChain=1;
             while(curr != 1){
@@ -535,7 +531,8 @@ public class EulerProblems {
                 if(curr<i){
                     String l = String.valueOf(curr);
                    currChain+=storedLengths[Integer.parseInt(l)]; 
-/*i will always be less then 1 million, and thus inside int range.Will not cause overflow*/
+                   /*i will always be less then 1 million, and thus inside int 
+                   range.Will not cause overflow*/
                    curr=1;
                 }
                 
@@ -548,7 +545,7 @@ public class EulerProblems {
                 startingN =i;
             }
         }
-        System.out.println("Answer is "+startingN+"With a chain length of "+chainLength);
+        System.out.println("Problem 14 \n Answer is "+startingN+"With a chain length of "+chainLength);
         
     }
     
@@ -579,19 +576,15 @@ public class EulerProblems {
           }
             
         }
-        }
-       
-        /* to add up the sum*/
+        }     /* to add up the sum*/
         for(int t=0; t<x.length(); t++){
-            System.out.println(x.charAt(t));
+            //System.out.println(x.charAt(t));
             char c=x.charAt(t);
               sum+= Character.getNumericValue(c);
-          
-            System.out.println("sum now = "+sum);
+           // System.out.println("sum now = "+sum);
         }
-        System.out.println("sum = "+sum);
-        
-    }
+        System.out.println("Problem 16 sum = "+sum);
+      }
     
     /**
      * If all the numbers from 1 to 1000 (one thousand) inclusive were written out in words, how many letters would be used?
@@ -641,10 +634,10 @@ public class EulerProblems {
               }
              
               
-            } System.out.println(s);
+            }// System.out.println(s);
             //add the number of characters to the sum, 
             sum += s.length();
         }
-        System.out.println("sum = "+ sum);
+        System.out.println("Problem 17 sum = "+ sum);
     }
 }//end class

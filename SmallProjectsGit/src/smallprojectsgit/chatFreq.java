@@ -12,21 +12,23 @@ package smallprojectsgit;
  * 
  */
 
-import java.io.File; 
+import java.io.*; 
 import java.util.*;
 
 public class chatFreq{
   
  static ArrayList<String> words;
- static  Hashtable<String,String> countedStrings;
-  
+   static String username1 ="placeholderb" ;
+ static String username2 ="placeholdera" ;
   public static void  main (String [] args){
     words = new ArrayList<>();
-   countedStrings = new Hashtable<>();
     String s = new String();
+    
     //Scanner scan = new Scanner(System.in);  //when running from command line could just directly send file there. 
     try {
-    Scanner scan = new Scanner(new File("chat.txt"));
+        
+    InputStream input= chatFreq.class.getResourceAsStream("chat.txt");
+    Scanner scan = new Scanner(input);
       System.out.println("File loaded");
       while(scan.hasNext()){
         s= scan.next(); 
@@ -65,16 +67,18 @@ public class chatFreq{
         }
         t++;
       }
-      countedStrings.put(curr,""+count);//how common the word is and what it is 
     }
     }
-  
+  /* possibly better as a switch case, change later*/
   public static  void inputHandle(String s){
-    if(s.matches("\\d\\d.\\d\\d") || s.matches("Shubham:")||s.matches("Cleđdyf:")){ //discard time stamps. and names
-    } else { if(s.matches("\\d\\d/\\d\\d/\\d\\d,")){
+    if(s.matches("\\d\\d.\\d\\d") || s.matches(username1)||s.matches(username2)){ //discard time stamps. and names
+    } else { if(s.matches("\\d*\\d/\\d\\d/\\d\\d,") || (s.matches ("\\d*:\\d*"))){
     }
     else{
+        s= s.toLowerCase();
+        if(!words.contains(s)){
       words.add(s);
+        }
     }
        }
     }
